@@ -1,44 +1,36 @@
 <template>
-  <v-app>
-    <!--
-    <v-app-bar
-      app
-      color="primary"
-      dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    <v-app>
+        <v-app-bar app color="white">
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+          <v-toolbar-title class="tool-bar-title headline">
+              Retail Execution Portal
+          </v-toolbar-title>
 
-      <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-    -->
+          <v-text-field
+              class="text-field-search-header"
+              v-model="search_msg"
+              @input="onChangeSearch()"
+              placeholder="Search">
+          </v-text-field>
 
-      <v-navigation-drawer
+          <v-combobox
+              class="combo-box-domain"
+              v-model="select_domain"
+              :items="domains">
+          </v-combobox>
+
+          <v-avatar
+              @click="onShowUserSettingsDialog"
+              size="36"
+              class="avatar-tool-bar blue-grey darken-2 orange--text app-settings" >
+              <span>{{ userLetter }}</span>
+          </v-avatar>
+
+      </v-app-bar>
+
+        <v-navigation-drawer
           class="left-nav-bar"
           v-model="drawer"
           color="white"
@@ -59,13 +51,17 @@
                   <v-icon class="icons-projects" >{{ item.icon }}</v-icon>
                   <span class="icon-text" :style="item.marginLeft">{{ item.short }}</span>
               </v-list-item>
-
           </v-list>
-      </v-navigation-drawer>
+        </v-navigation-drawer>
 
-    <v-content>
-      <router-view />
-    </v-content>
+        <v-content>
+          <router-view />
+        </v-content>
+
+        <v-footer class="app-footer" color="white">
+          <v-spacer></v-spacer>
+          <div>RSi &copy; {{ new Date().getFullYear() }}</div>
+        </v-footer>
   </v-app>
 </template>
 
@@ -117,6 +113,13 @@ export default {
             mini: true,
             drawer: true,
         };
+    },
+    computed: {
+        userLetter() {
+            return this.user !== null ? this.user[0] : "";
+            // let user = this.$store.getters.getUser;
+            // return user !== {} ? user.first_name[0] : "";
+        }
     },
     methods: {
         onItemClick(item) {
@@ -170,6 +173,36 @@ export default {
         }
     }
 
+    .avatar-tool-bar {
+        text-align: center;
+        margin-top: -9px;
+    }
+
+    .combo-box-domain {
+        top: 9px;
+        flex: inherit !important;
+        width: 105px;
+        right: 42px;
+    }
+
+    .text-field-search-header {
+        margin-top: 16px !important;
+        flex: inherit !important;
+        width: 240px;
+        margin-right: 81px !important;
+    }
+
+    .v-toolbar {
+        left: 56px !important;
+        box-shadow: none !important;
+        -webkit-box-shadow:  none !important;
+    }
+
+    .tool-bar-title {
+        //margin-top: 9px;
+        margin-left: 24px;
+    }
+
     .rsi-logo {
         height: 27px;
         margin-left: 9px;
@@ -180,5 +213,12 @@ export default {
         &:hover {
             //cursor: pointer;
         }
+    }
+
+    .app-footer {
+        background-color: #ffffff !important;
+        position: fixed !important;
+        bottom: 0;
+        width: 100%;
     }
 </style>
