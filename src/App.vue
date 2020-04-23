@@ -41,11 +41,11 @@
       <v-navigation-drawer
           class="left-nav-bar"
           v-model="drawer"
-          color="primary"
+          color="white"
           :mini-variant="mini"
           :right="right"
           absolute
-          dark>
+          >
           <v-list  class="py-0" >
               <img
                   class="rsi-logo"
@@ -139,6 +139,7 @@ export default {
 </script>
 
 <style lang="scss">
+
     .left-nav-bar {
         //top: 9px !important;
         position: fixed !important;
