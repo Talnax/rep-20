@@ -109,10 +109,10 @@
         </v-row>
         -->
 
-        <v-row class="cards-position" justify="center">
+        <v-row class="card-section" justify="center">
             <v-col
                 v-for="n in cards"
-                :key="n"
+                :key="n.id"
                 cols="auto">
                 <v-card
                     class="card-position"
@@ -152,16 +152,19 @@
             return {
                 cards: [
                     {
-                       title:  `<b class="white--text">D</b>ata Availability`,
-                        img: `imgs/knowledge-7.jpeg`
+                        title:  `<b class="white--text">D</b>ata Availability`,
+                        img: `imgs/knowledge-7.jpeg`,
+                        id: 1
                     },
                     {
                         title: `<b class="white--text">E</b>vents`,
-                        img: `imgs/events-1.jpg`
+                        img: `imgs/events-1.jpg`,
+                        id: 2
                     },
                     {
                         title: `<b class="white--text">K</b>nowledge Hub`,
-                        img: `imgs/data-availability-3.jpg`
+                        img: `imgs/data-availability-3.jpg`,
+                        id: 3
                     }
                 ]
             }
@@ -175,6 +178,7 @@
         height: 100% !important;
         background-color: #F5F5F5;
 
+        /*
         .cards-position {
             //top: 60px;
             //margin-top: 45px;
@@ -212,8 +216,15 @@
                 }
             }
         }
+        */
 
+        .card-section {
 
+            .card-position {
+                margin-top: 30px;
+                margin-right: 30px;
+            }
+        }
 
 
     }
