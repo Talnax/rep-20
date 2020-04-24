@@ -120,7 +120,7 @@
                     <!---->
                     <v-img
                         class="white--text align-end"
-                        height="200px"
+                        height="180px"
                         :src="getImgUrl(n.img)" >
                         <!--
                         <v-card-title>
@@ -266,7 +266,9 @@
 
                 .font-weight-regular {
                     font-weight: 300 !important;
-                    font-size: 15px;
+                    font-size: 18px !important;
+                    line-height: normal;
+                    word-break: break-word;
                 }
             }
         }
