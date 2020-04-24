@@ -117,7 +117,6 @@
                 <v-card
                     class="card-position"
                     width="390">
-                    <!---->
                     <v-img
                         class="white--text align-end"
                         height="180px"
@@ -138,6 +137,60 @@
                     <v-card-title>
                         <v-icon class="icon-position" size="36">{{n.icon}}</v-icon>
                         <div class="display-1 mb-2">{{n.title}}</div>
+                        <div class="title font-weight-regular ">{{n.subtitle}}</div>
+                    </v-card-title>
+                    <!--
+                    <v-row
+                        class="fill-height"
+                        align="center"
+                        justify="center"
+                        v-text="n - 1">
+                    </v-row>
+                    -->
+
+                    <!--
+                        <v-row>
+                            <v-col class="hidden-sm-and-down" md="2">
+                                <v-icon size="33">mdi-account-multiple-outline</v-icon>
+                            </v-col>
+                            <v-col cols="12" md="10">
+                                Scaevola imperdiet nec ut,
+                                sed euismod convenire principes at.
+                            </v-col>
+                        </v-row>
+                    -->
+
+                </v-card>
+            </v-col>
+        </v-row>
+
+        <v-row class="card-section" justify="center">
+
+            <v-col
+                v-for="n in hubs"
+                :key="n.id"
+                cols="auto">
+                <v-card
+                    class="card-position"
+                    width="390">
+                    <v-app-bar
+                            dark
+                            color="grey lighten-1">
+
+                        <!--<v-app-bar-nav-icon></v-app-bar-nav-icon>-->
+
+                        <v-btn icon>
+                            <v-icon >{{n.icon}}</v-icon>
+                        </v-btn>
+
+                        <v-toolbar-title>{{n.title}}</v-toolbar-title>
+
+                        <v-spacer></v-spacer>
+
+                    </v-app-bar>
+                    <v-card-title>
+                        <!--<v-icon class="icon-position" size="36">{{n.icon}}</v-icon>-->
+                        <!--<div class="display-1 mb-2">{{n.title}}</div>-->
                         <div class="title font-weight-regular ">{{n.subtitle}}</div>
                     </v-card-title>
                     <!--
@@ -196,6 +249,31 @@
                     {
                         icon: 'storage',
                         title: `Knowledge Hub`,
+                        img: `imgs/data-availability-3.jpg`,
+                        id: 3,
+                        subtitle: `Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet`
+                    }
+                ],
+
+                hubs: [
+                    {
+                        icon:  'language',
+                        title: `Daily Overview`,
+                        img: `imgs/knowledge-7.jpeg`,
+                        id: 1,
+                        subtitle: `Our comprehensive knowledge hub covers topic ranging from industry best practices.`,
+                        staff: '   through robust measure.'
+                    },
+                    {
+                        icon: 'fiber_new',
+                        title: `News`,
+                        img: `imgs/events-1.jpg`,
+                        id: 2,
+                        subtitle: `Check out our events scheduled over the next few months and sign up for seminars`
+                    },
+                    {
+                        icon: 'ring_volume',
+                        title: `Communication`,
                         img: `imgs/data-availability-3.jpg`,
                         id: 3,
                         subtitle: `Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet`
