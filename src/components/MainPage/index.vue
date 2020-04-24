@@ -116,16 +116,30 @@
                 cols="auto">
                 <v-card
                     class="card-position"
-                    height="240"
-                    width="360">
+                    width="390">
+                    <!---->
                     <v-img
                         class="white--text align-end"
                         height="200px"
                         :src="getImgUrl(n.img)" >
+                        <!--
                         <v-card-title>
-                            <b class="timeline-item-title  white-text">K</b>nowledge Hub
+                            <div v-html='n.title'/>
                         </v-card-title>
+                        -->
                     </v-img>
+
+                    <!--
+                    <v-img
+                            src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
+                            :aspect-ratio="16/9">
+                    </v-img>
+                    -->
+                    <v-card-title>
+                        <v-icon class="icon-position" size="36">{{n.icon}}</v-icon>
+                        <div class="display-1 mb-2">{{n.title}}</div>
+                        <div class="title font-weight-regular ">{{n.subtitle}}</div>
+                    </v-card-title>
                     <!--
                     <v-row
                         class="fill-height"
@@ -134,6 +148,19 @@
                         v-text="n - 1">
                     </v-row>
                     -->
+
+                    <!--
+                        <v-row>
+                            <v-col class="hidden-sm-and-down" md="2">
+                                <v-icon size="33">mdi-account-multiple-outline</v-icon>
+                            </v-col>
+                            <v-col cols="12" md="10">
+                                Scaevola imperdiet nec ut,
+                                sed euismod convenire principes at.
+                            </v-col>
+                        </v-row>
+                    -->
+
                 </v-card>
             </v-col>
         </v-row>
@@ -152,19 +179,26 @@
             return {
                 cards: [
                     {
-                        title:  `<b class="white--text">D</b>ata Availability`,
+                        icon:  'mdi-account-multiple-outline',
+                        title: `Data Availability`,
                         img: `imgs/knowledge-7.jpeg`,
-                        id: 1
+                        id: 1,
+                        subtitle: `Our comprehensive knowledge hub covers topic ranging from industry best practices.`,
+                        staff: '   through robust measure.'
                     },
                     {
-                        title: `<b class="white--text">E</b>vents`,
+                        icon: 'event_available',
+                        title: `Events`,
                         img: `imgs/events-1.jpg`,
-                        id: 2
+                        id: 2,
+                        subtitle: `Check out our events scheduled over the next few months and sign up for seminars`
                     },
                     {
-                        title: `<b class="white--text">K</b>nowledge Hub`,
+                        icon: 'storage',
+                        title: `Knowledge Hub`,
                         img: `imgs/data-availability-3.jpg`,
-                        id: 3
+                        id: 3,
+                        subtitle: `Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet`
                     }
                 ]
             }
@@ -222,7 +256,18 @@
 
             .card-position {
                 margin-top: 30px;
-                margin-right: 30px;
+                //margin-right: 54px;
+                margin-left: 54px;
+
+                .icon-position {
+                    margin-right: 36px;
+                    margin-top: -6px;
+                }
+
+                .font-weight-regular {
+                    font-weight: 300 !important;
+                    font-size: 15px;
+                }
             }
         }
 
