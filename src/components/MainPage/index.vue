@@ -165,7 +165,6 @@
         </v-row>
 
         <v-row class="card-section" justify="center">
-
             <v-col
                 v-for="n in hubs"
                 :key="n.id"
@@ -201,7 +200,6 @@
                         v-text="n - 1">
                     </v-row>
                     -->
-
                     <!--
                         <v-row>
                             <v-col class="hidden-sm-and-down" md="2">
@@ -213,6 +211,29 @@
                             </v-col>
                         </v-row>
                     -->
+                    <v-list two-line>
+                        <v-list-item
+                            v-for="(item) in communication"
+                            :key="item.title">
+                            <v-list-item-icon>
+                                <v-icon color="indigo">mdi-phone</v-icon>
+                            </v-list-item-icon>
+
+                            <v-list-item-content>
+                                <v-list-item-title>{{ item.title }}</v-list-item-title>
+                                <v-list-item-subtitle>{{ item.date }}</v-list-item-subtitle>
+                            </v-list-item-content>
+
+                            <v-list-item-icon>
+                                <v-icon>mdi-message-text</v-icon>
+                            </v-list-item-icon>
+                        </v-list-item>
+
+                        <!--
+                        <v-divider inset></v-divider>
+                        <v-divider inset></v-divider>
+                        -->
+                    </v-list>
 
                 </v-card>
             </v-col>
@@ -224,12 +245,19 @@
 
 <script>
     import loadImageMixin from "@/mixins/loadImageMixin";
+    //import CommunicationMoreDialog from "@/dialogs/communication-more-dialog"
 
     export default {
         name: "MainPage-index",
         mixins: [loadImageMixin],
+        // components: {
+        //     "communication-more-dialog": CommunicationMoreDialog
+        // },
         data() {
             return {
+                show_more_dlg: false,
+                show_more_item: null,
+
                 cards: [
                     {
                         icon:  'mdi-account-multiple-outline',
@@ -278,8 +306,79 @@
                         id: 3,
                         subtitle: `Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet`
                     }
+                ],
+
+                communication: [
+                    // avatar: 'https://picsum.photos/250/300?image=821'
+                    {
+                        title: 'Target US Data Status',
+                        subtitle: '4/2/2020',
+                        value: '',
+                        date: '4/2/2020',
+                        time: '9:15:07 AM',
+                        avatar: 'icons/target.png'
+                    },
+                    {
+                        title: 'Target Data Status',
+                        subtitle: 'More...',
+                        value: '',
+                        date: '4/2/2020',
+                        time: '6:15:15 AM',
+                        avatar: 'icons/target.png'
+                    },
+                    {
+                        title: 'Calimax Data Status',
+                        subtitle: 'More...',
+                        value: '',
+                        date: '4/2/2020',
+                        time: '4:05:15 AM',
+                        avatar: 'icons/calimax.jpg'
+                    },
+                    {
+                        title: 'Sams CN SSC Data Status',
+                        subtitle: 'More...',
+                        value: '',
+                        date: '4/2/2020',
+                        time: '3:40:15 AM',
+                        avatar: 'icons/sams.png',
+                    },
+                    {
+                        title: 'Wallmart Category CN SSC Data Status -Resolved-',
+                        subtitle: 'More...',
+                        value: '',
+                        date: '4/2/2020',
+                        time: '3:10:15 AM',
+                        avatar: 'icons/walmart.png'
+                    },
+                    {
+                        title: 'Wallmart US Data Status -Resolved-',
+                        subtitle: 'More...',
+                        value: '',
+                        date: '4/2/2020',
+                        time: '2:25:16 AM',
+                        avatar: 'icons/walmart.png'
+                    }
                 ]
             }
+        },
+        methods: {
+            onListCommunicationClick(item) {
+                console.log('onListCommunicationClick(item): ', item );
+                this.onShowCommunicationMoreDialog(item);
+            },
+
+            onShowCommunicationMoreDialog(item) {
+                console.clear();
+                console.log("onShowCommunicationMoreDialog(item): ", item );
+                this.show_more_item = item;
+                this.show_more_dlg = true;
+            },
+
+            onCloseCommunicationMoreDialog() {
+                console.log("onCloseCommunicationMoreDialog()");
+                this.show_more_item = null;
+                this.show_more_dlg = false;
+            },
         }
     }
 </script>
@@ -289,6 +388,7 @@
         width: 100% !important;
         height: 100% !important;
         background-color: #F5F5F5;
+        margin-bottom: 90px;
 
         /*
         .cards-position {
