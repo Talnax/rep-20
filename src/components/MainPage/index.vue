@@ -135,7 +135,7 @@
                     </v-img>
                     -->
                     <v-card-title>
-                        <v-icon class="icon-position" size="36">{{n.icon}}</v-icon>
+                        <v-icon class="icon-position" size="27">{{n.icon}}</v-icon>
                         <div class="display-1 mb-2">{{n.title}}</div>
                         <div class="title font-weight-regular ">{{n.subtitle}}</div>
                     </v-card-title>
@@ -172,20 +172,12 @@
                 <v-card
                     class="card-position"
                     width="390">
-                    <v-app-bar
-                            dark
-                            color="grey lighten-1">
-
-                        <!--<v-app-bar-nav-icon></v-app-bar-nav-icon>-->
-
+                    <v-app-bar dark color="grey">
+                        <v-toolbar-title>{{n.title}}</v-toolbar-title>
+                        <v-spacer></v-spacer>
                         <v-btn icon>
                             <v-icon >{{n.icon}}</v-icon>
                         </v-btn>
-
-                        <v-toolbar-title>{{n.title}}</v-toolbar-title>
-
-                        <v-spacer></v-spacer>
-
                     </v-app-bar>
                     <v-card-title>
                         <!--<v-icon class="icon-position" size="36">{{n.icon}}</v-icon>-->
@@ -211,21 +203,81 @@
                             </v-col>
                         </v-row>
                     -->
-                    <v-list two-line>
+                    <v-list v-if="n.title === 'Communication'" two-line>
                         <v-list-item
-                            v-for="(item) in communication"
+                            @click="onClickCommunication(item)"
+                            v-for="item in communication"
                             :key="item.title">
+                            <!--
                             <v-list-item-icon>
                                 <v-icon color="indigo">mdi-phone</v-icon>
+                            </v-list-item-icon>
+                            -->
+                            <v-list-item-avatar>
+                                <img v-if="item.avatar.includes('icons')"
+                                     :src="getImgUrl(item.avatar)">
+                                <img v-else :src='item.avatar' >
+                            </v-list-item-avatar>
+
+                            <v-list-item-content>
+                                <v-list-item-title>{{ item.title }}</v-list-item-title>
+                                <v-list-item-subtitle>{{ item.date + ";  " + item.time }}</v-list-item-subtitle>
+                            </v-list-item-content>
+
+                            <v-list-item-icon>
+                                <v-icon>help_outline</v-icon>
+                            </v-list-item-icon>
+                        </v-list-item>
+
+                        <!--
+                        <v-divider inset></v-divider>
+                        <v-divider inset></v-divider>
+                        -->
+                    </v-list>
+
+                    <v-list v-if="n.title === 'News'" two-line>
+                        <v-list-item
+                                @click="onClickCommunication(item)"
+                                v-for="item in news"
+                                :key="item.title">
+
+                            <v-list-item-icon>
+                                <v-icon color="black">{{ item.avatar }}</v-icon>
                             </v-list-item-icon>
 
                             <v-list-item-content>
                                 <v-list-item-title>{{ item.title }}</v-list-item-title>
-                                <v-list-item-subtitle>{{ item.date }}</v-list-item-subtitle>
+                                <v-list-item-subtitle>{{ item.subtitle }}</v-list-item-subtitle>
                             </v-list-item-content>
 
                             <v-list-item-icon>
-                                <v-icon>mdi-message-text</v-icon>
+                                <v-icon>help_outline</v-icon>
+                            </v-list-item-icon>
+                        </v-list-item>
+
+                        <!--
+                        <v-divider inset></v-divider>
+                        <v-divider inset></v-divider>
+                        -->
+                    </v-list>
+
+                    <v-list v-if="n.title === 'Daily Overview'" two-line>
+                        <v-list-item
+                                @click="onClickCommunication(item)"
+                                v-for="item in daily_overview"
+                                :key="item.title">
+
+                            <v-list-item-icon>
+                                <v-icon color="black">{{ item.avatar }}</v-icon>
+                            </v-list-item-icon>
+
+                            <v-list-item-content>
+                                <v-list-item-title>{{ item.title }}</v-list-item-title>
+                                <v-list-item-subtitle>{{ item.subtitle }}</v-list-item-subtitle>
+                            </v-list-item-content>
+
+                            <v-list-item-icon>
+                                <v-icon>help_outline</v-icon>
                             </v-list-item-icon>
                         </v-list-item>
 
@@ -308,6 +360,37 @@
                     }
                 ],
 
+                news: [
+                    {
+                        title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        subtitle: 'Lorem Ipsum has been the industry',
+                        avatar: 'commute'
+                    },
+                    {
+                        title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        subtitle: 'Lorem Ipsum has been the industry',
+                        avatar: 'credit_card'
+                    }
+                ],
+
+                daily_overview: [
+                    {
+                        title: 'Lorem Ipsum is simply dummy text of the printing',
+                        subtitle: 'Lorem Ipsum has been the industry standard dummy text',
+                        avatar: 'business'
+                    },
+                    {
+                        title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        subtitle: 'Lorem Ipsum has been the industry standard dummy text',
+                        avatar: 'personal_video'
+                    },
+                    {
+                        title: 'Lorem Ipsum is simply dummy text of the printing and typesetting',
+                        subtitle: 'Lorem Ipsum has been the industry standard dummy text',
+                        avatar: 'graphic_eq'
+                    }
+                ],
+
                 communication: [
                     // avatar: 'https://picsum.photos/250/300?image=821'
                     {
@@ -367,6 +450,10 @@
                 this.onShowCommunicationMoreDialog(item);
             },
 
+            onClickCommunication(item) {
+                console.log("onShowCommunicationMoreDialog(item): ", item );
+            },
+
             onShowCommunicationMoreDialog(item) {
                 console.clear();
                 console.log("onShowCommunicationMoreDialog(item): ", item );
@@ -388,7 +475,7 @@
         width: 100% !important;
         height: 100% !important;
         background-color: #F5F5F5;
-        margin-bottom: 90px;
+        margin-bottom: 30px;
 
         /*
         .cards-position {
@@ -438,8 +525,12 @@
                 margin-left: 54px;
 
                 .icon-position {
-                    margin-right: 36px;
+                    margin-right: 27px;
                     margin-top: -6px;
+                }
+
+                .display-1 {
+                    font-size: 1.5rem !important;
                 }
 
                 .font-weight-regular {
