@@ -127,12 +127,6 @@
                         </v-card-title>
                         -->
                     </v-img>
-                    <!--
-                    <v-img
-                        src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-                        :aspect-ratio="16/9">
-                    </v-img>
-                    -->
                     <v-card-title class="card-title">
                         <v-icon class="icon-position" size="27">{{n.icon}}</v-icon>
                         <div class="display-1 mb-2">{{n.title}}</div>
@@ -148,7 +142,6 @@
                         v-text="n - 1">
                     </v-row>
                     -->
-
                     <!--
                         <v-row>
                             <v-col class="hidden-sm-and-down" md="2">
@@ -160,7 +153,6 @@
                             </v-col>
                         </v-row>
                     -->
-
                 </v-card>
             </v-col>
         </v-row>
@@ -180,10 +172,10 @@
                             <v-icon >{{n.icon}}</v-icon>
                         </v-btn>
                     </v-app-bar>
-                    <v-card-title>
+                    <v-card-title class="card-title ">
                         <!--<v-icon class="icon-position" size="36">{{n.icon}}</v-icon>-->
                         <!--<div class="display-1 mb-2">{{n.title}}</div>-->
-                        <div class="title font-weight-regular ">{{n.subtitle}}</div>
+                        <div class="title font-weight-regular_second ">{{n.subtitle}}</div>
                     </v-card-title>
                     <!--
                     <v-row
@@ -209,11 +201,6 @@
                             @click="onClickCommunication(item)"
                             v-for="item in communication"
                             :key="item.id">
-                            <!--
-                            <v-list-item-icon>
-                                <v-icon color="indigo">mdi-phone</v-icon>
-                            </v-list-item-icon>
-                            -->
                             <v-list-item-avatar>
                                 <img v-if="item.avatar.includes('icons')"
                                      :src="getImgUrl(item.avatar)">
@@ -229,10 +216,6 @@
                                 <v-icon>help_outline</v-icon>
                             </v-list-item-icon>
                         </v-list-item>
-                        <!--
-                        <v-divider inset></v-divider>
-                        <v-divider inset></v-divider>
-                        -->
                     </v-list>
 
                     <v-list v-if="n.title === 'News'" two-line>
@@ -252,10 +235,6 @@
                                 <v-icon>help_outline</v-icon>
                             </v-list-item-icon>
                         </v-list-item>
-                        <!--
-                        <v-divider inset></v-divider>
-                        <v-divider inset></v-divider>
-                        -->
                     </v-list>
 
                     <v-list v-if="n.title === 'Daily Overview'" two-line>
@@ -474,46 +453,6 @@
         background-color: #F5F5F5;
         margin-bottom: 30px;
 
-        /*
-        .cards-position {
-            //top: 60px;
-            //margin-top: 45px;
-
-            .position-start {
-                position: absolute;
-                top: 60px;
-                left: 150px;
-
-                .timeline-item-title {
-                    font-size: 2.7rem !important;
-                    font-weight: 300;
-                }
-            }
-
-            .position-middle {
-                left: 750px;
-                top: 60px;
-                position: absolute;
-
-                .timeline-item-title {
-                    font-size: 2.7rem !important;
-                    font-weight: 300;
-                }
-            }
-
-            .position-stop {
-                left: 1300px;
-                top: 60px;
-                position: absolute;
-
-                .timeline-item-title {
-                    font-size: 2.7rem !important;
-                    font-weight: 300;
-                }
-            }
-        }
-        */
-
         .card-section {
 
             .card-position {
@@ -558,9 +497,16 @@
                         word-break: break-word;
                     }
 
+                    .font-weight-regular_second {
+                        margin-top: 6px !important;
+                        font-weight: 300 !important;
+                        font-size: 18px !important;
+                        line-height: normal;
+                        word-break: break-word;
+                        margin-bottom: -15px;
+                    }
+
                 }
-
-
             }
         }
     }
