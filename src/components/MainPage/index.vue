@@ -127,14 +127,13 @@
                         </v-card-title>
                         -->
                     </v-img>
-
                     <!--
                     <v-img
-                            src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-                            :aspect-ratio="16/9">
+                        src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
+                        :aspect-ratio="16/9">
                     </v-img>
                     -->
-                    <v-card-title>
+                    <v-card-title class="card-title">
                         <v-icon class="icon-position" size="27">{{n.icon}}</v-icon>
                         <div class="display-1 mb-2">{{n.title}}</div>
                         <v-icon class="icon-right-position" size="27">slideshow</v-icon>
@@ -209,7 +208,7 @@
                         <v-list-item
                             @click="onClickCommunication(item)"
                             v-for="item in communication"
-                            :key="item.title">
+                            :key="item.id">
                             <!--
                             <v-list-item-icon>
                                 <v-icon color="indigo">mdi-phone</v-icon>
@@ -240,7 +239,7 @@
                         <v-list-item
                             @click="onClickCommunication(item)"
                             v-for="item in news"
-                            :key="item.title">
+                            :key="item.id">
                             <v-list-item-icon>
                                 <v-icon color="black">{{ item.avatar }}</v-icon>
                             </v-list-item-icon>
@@ -263,7 +262,7 @@
                         <v-list-item
                             @click="onClickCommunication(item)"
                             v-for="item in daily_overview"
-                            :key="item.title">
+                            :key="item.id">
                             <v-list-item-icon>
                                 <v-icon color="black">{{ item.avatar }}</v-icon>
                             </v-list-item-icon>
@@ -357,12 +356,14 @@
                     {
                         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
                         subtitle: 'Lorem Ipsum has been the industry',
-                        avatar: 'commute'
+                        avatar: 'commute',
+                        id: 1
                     },
                     {
                         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
                         subtitle: 'Lorem Ipsum has been the industry',
-                        avatar: 'credit_card'
+                        avatar: 'credit_card',
+                        id: 2
                     }
                 ],
 
@@ -370,17 +371,20 @@
                     {
                         title: 'Lorem Ipsum is simply dummy text of the printing',
                         subtitle: 'Lorem Ipsum has been the industry standard dummy text',
-                        avatar: 'business'
+                        avatar: 'business',
+                        id: 1
                     },
                     {
                         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
                         subtitle: 'Lorem Ipsum has been the industry standard dummy text',
-                        avatar: 'personal_video'
+                        avatar: 'personal_video',
+                        id: 2
                     },
                     {
                         title: 'Lorem Ipsum is simply dummy text of the printing and typesetting',
                         subtitle: 'Lorem Ipsum has been the industry standard dummy text',
-                        avatar: 'graphic_eq'
+                        avatar: 'graphic_eq',
+                        id: 3
                     }
                 ],
 
@@ -514,45 +518,50 @@
 
             .card-position {
                 margin-top: 30px;
-                //margin-right: 54px;
-                margin-left: 54px;
+                margin-left: 51px;
 
-                .app-bar-card {
-                    height: 54px !important;
-
-                    .app-bar-card-title {
-                        margin-top: -9px !important;
-                    }
-                    .app-bar-card-icon {
-                        margin-top: -9px !important;
-                    }
-                }
-
-                .icon-position {
-                    margin-right: 27px;
+                .card-title {
                     margin-top: -9px;
+
+                    .app-bar-card {
+                        height: 51px !important;
+
+                        .app-bar-card-title {
+                            margin-top: -9px !important;
+                        }
+                        .app-bar-card-icon {
+                            margin-top: -9px !important;
+                        }
+                    }
+
+                    .icon-position {
+                        margin-right: 18px;
+                        margin-top: -9px;
+                    }
+
+                    .display-1 {
+                        font-size: 1.5rem !important;
+                        line-height: normal !important;
+                    }
+
+                    .icon-right-position {
+                        position: absolute;
+                        right: 18px;
+                        bottom: 72px;
+                    }
+
+                    .font-weight-regular {
+                        margin-top: -9px !important;
+                        font-weight: 300 !important;
+                        font-size: 18px !important;
+                        line-height: normal;
+                        word-break: break-word;
+                    }
+
                 }
 
-                .display-1 {
-                    font-size: 1.5rem !important;
-                }
 
-                .icon-right-position {
-                    position: absolute;
-                    right: 18px;
-                    bottom: 72px;
-                }
-
-                .font-weight-regular {
-                    margin-top: -9px !important;
-                    font-weight: 300 !important;
-                    font-size: 18px !important;
-                    line-height: normal;
-                    word-break: break-word;
-                }
             }
         }
-
-
     }
 </style>

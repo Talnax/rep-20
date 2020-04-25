@@ -52,6 +52,19 @@
                   <v-icon class="icons-projects black--text" >{{ item.icon }}</v-icon>
                   <span class="icon-text" :style="item.marginLeft">{{ item.short }}</span>
               </v-list-item>
+              <br><br><br><br><br><br><br><br><br><br><br>
+              <v-divider></v-divider>
+
+              <v-list-item
+                      class="vertical-menu"
+                      v-for="item in bottom_items"
+                      :key="item.title"
+                      @click="onItemClick(item)">
+                  <!-- -->
+                  <v-icon class="icons-projects black--text" >{{ item.icon }}</v-icon>
+                  <span class="icon-text" :style="item.marginLeft">{{ item.short }}</span>
+              </v-list-item>
+
           </v-list>
         </v-navigation-drawer>
 
@@ -110,6 +123,12 @@ export default {
                 { title: 'Pacific', short: "Pacific",
                     marginLeft: "margin-left: -3px;", icon: 'touch_app'}
             ],
+
+            bottom_items: [
+                { title: 'More Info', short: "Info",
+                    marginLeft: "margin-left: 3px;", icon: 'not_listed_location'}
+            ],
+
             right: null,
             mini: true,
             drawer: true,
