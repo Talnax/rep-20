@@ -48,7 +48,8 @@
                   v-for="item in items"
                   :key="item.title"
                   @click="onItemClick(item)">
-                  <v-icon class="icons-projects" >{{ item.icon }}</v-icon>
+                  <!-- -->
+                  <v-icon class="icons-projects black--text" >{{ item.icon }}</v-icon>
                   <span class="icon-text" :style="item.marginLeft">{{ item.short }}</span>
               </v-list-item>
           </v-list>

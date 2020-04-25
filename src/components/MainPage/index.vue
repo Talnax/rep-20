@@ -137,6 +137,8 @@
                     <v-card-title>
                         <v-icon class="icon-position" size="27">{{n.icon}}</v-icon>
                         <div class="display-1 mb-2">{{n.title}}</div>
+                        <v-icon class="icon-right-position" size="27">slideshow</v-icon>
+                        <br><br>
                         <div class="title font-weight-regular ">{{n.subtitle}}</div>
                     </v-card-title>
                     <!--
@@ -172,10 +174,10 @@
                 <v-card
                     class="card-position"
                     width="390">
-                    <v-app-bar dark color="grey">
-                        <v-toolbar-title>{{n.title}}</v-toolbar-title>
+                    <v-app-bar dark color="grey" class="app-bar-card black--text">
+                        <v-toolbar-title class="app-bar-card-title">{{n.title}}</v-toolbar-title>
                         <v-spacer></v-spacer>
-                        <v-btn icon>
+                        <v-btn icon class="app-bar-card-icon">
                             <v-icon >{{n.icon}}</v-icon>
                         </v-btn>
                     </v-app-bar>
@@ -228,7 +230,6 @@
                                 <v-icon>help_outline</v-icon>
                             </v-list-item-icon>
                         </v-list-item>
-
                         <!--
                         <v-divider inset></v-divider>
                         <v-divider inset></v-divider>
@@ -237,14 +238,12 @@
 
                     <v-list v-if="n.title === 'News'" two-line>
                         <v-list-item
-                                @click="onClickCommunication(item)"
-                                v-for="item in news"
-                                :key="item.title">
-
+                            @click="onClickCommunication(item)"
+                            v-for="item in news"
+                            :key="item.title">
                             <v-list-item-icon>
                                 <v-icon color="black">{{ item.avatar }}</v-icon>
                             </v-list-item-icon>
-
                             <v-list-item-content>
                                 <v-list-item-title>{{ item.title }}</v-list-item-title>
                                 <v-list-item-subtitle>{{ item.subtitle }}</v-list-item-subtitle>
@@ -254,7 +253,6 @@
                                 <v-icon>help_outline</v-icon>
                             </v-list-item-icon>
                         </v-list-item>
-
                         <!--
                         <v-divider inset></v-divider>
                         <v-divider inset></v-divider>
@@ -263,30 +261,25 @@
 
                     <v-list v-if="n.title === 'Daily Overview'" two-line>
                         <v-list-item
-                                @click="onClickCommunication(item)"
-                                v-for="item in daily_overview"
-                                :key="item.title">
-
+                            @click="onClickCommunication(item)"
+                            v-for="item in daily_overview"
+                            :key="item.title">
                             <v-list-item-icon>
                                 <v-icon color="black">{{ item.avatar }}</v-icon>
                             </v-list-item-icon>
-
                             <v-list-item-content>
                                 <v-list-item-title>{{ item.title }}</v-list-item-title>
                                 <v-list-item-subtitle>{{ item.subtitle }}</v-list-item-subtitle>
                             </v-list-item-content>
-
                             <v-list-item-icon>
                                 <v-icon>help_outline</v-icon>
                             </v-list-item-icon>
                         </v-list-item>
-
                         <!--
                         <v-divider inset></v-divider>
                         <v-divider inset></v-divider>
                         -->
                     </v-list>
-
                 </v-card>
             </v-col>
         </v-row>
@@ -524,16 +517,34 @@
                 //margin-right: 54px;
                 margin-left: 54px;
 
+                .app-bar-card {
+                    height: 54px !important;
+
+                    .app-bar-card-title {
+                        margin-top: -9px !important;
+                    }
+                    .app-bar-card-icon {
+                        margin-top: -9px !important;
+                    }
+                }
+
                 .icon-position {
                     margin-right: 27px;
-                    margin-top: -6px;
+                    margin-top: -9px;
                 }
 
                 .display-1 {
                     font-size: 1.5rem !important;
                 }
 
+                .icon-right-position {
+                    position: absolute;
+                    right: 18px;
+                    bottom: 72px;
+                }
+
                 .font-weight-regular {
+                    margin-top: -9px !important;
                     font-weight: 300 !important;
                     font-size: 18px !important;
                     line-height: normal;
