@@ -1,114 +1,6 @@
 <template>
     <div  class="main-control">
 
-        <!--
-        <v-row justify="center" align="center">
-            <v-col cols="12" sm="1">
-                MainPage
-            </v-col>
-        </v-row>
-        -->
-
-        <!--<div justify="center" align="center" class="cards-position">-->
-        <!--
-        <v-row justify="center" class="cards-position">
-
-            <v-card class="position-start" max-width="360" >
-                <v-img
-                    class="white--text align-end"
-                    height="200px"
-                    src="https://cdn.vuetifyjs.com/images/cards/docks.jpg" >
-                    <v-card-title>
-                        <b class="timeline-item-title  white-text">K</b>nowledge Hub
-                    </v-card-title>
-                </v-img>
-                <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
-                <v-card-text class="text--primary">
-                    <div>Whitehaven Beach</div>
-                    <div>Whitsunday Island, Whitsunday Islands</div>
-                </v-card-text>
-                <v-card-actions>
-                    <v-btn
-                        color="orange"
-                        text>
-                        Share
-                    </v-btn>
-
-                    <v-btn
-                        color="orange"
-                        text>
-                        Explore
-                    </v-btn>
-                </v-card-actions>
-            </v-card>
-
-            <v-card class="position-middle" max-width="360" >
-                <v-img
-                    class="white--text align-end"
-                    height="200px"
-                    src="https://cdn.vuetifyjs.com/images/cards/docks.jpg" >
-                    <v-card-title>
-                        <b class="timeline-item-title  white-text">D</b>ata Availability
-                    </v-card-title>
-                </v-img>
-
-                <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
-
-                <v-card-text class="text--primary">
-                    <div>Whitehaven Beach</div>
-                    <div>Whitsunday Island, Whitsunday Islands</div>
-                </v-card-text>
-
-                <v-card-actions>
-                    <v-btn
-                            color="orange"
-                            text>
-                        Share
-                    </v-btn>
-
-                    <v-btn
-                            color="orange"
-                            text>
-                        Explore
-                    </v-btn>
-                </v-card-actions>
-            </v-card>
-
-            <v-card class="position-stop" max-width="360" >
-                <v-img
-                    class="white--text align-end"
-                    height="200px"
-                    src="https://cdn.vuetifyjs.com/images/cards/docks.jpg" >
-                    <v-card-title>
-                        <b class="timeline-item-title  white-text">E</b>vents
-                    </v-card-title>
-                </v-img>
-
-                <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
-
-                <v-card-text class="text--primary">
-                    <div>Whitehaven Beach</div>
-                    <div>Whitsunday Island, Whitsunday Islands</div>
-                </v-card-text>
-
-                <v-card-actions>
-                    <v-btn
-                            color="orange"
-                            text>
-                        Share
-                    </v-btn>
-
-                    <v-btn
-                            color="orange"
-                            text>
-                        Explore
-                    </v-btn>
-                </v-card-actions>
-            </v-card>
-
-        </v-row>
-        -->
-
         <v-row class="card-section" justify="center">
             <v-col
                 v-for="n in cards"
@@ -119,7 +11,7 @@
                     width="390">
                     <v-img
                         class="white--text align-end"
-                        height="180px"
+                        height="150px"
                         :src="getImgUrl(n.img)" >
                         <!--
                         <v-card-title>
@@ -285,7 +177,7 @@
                     {
                         icon:  'mdi-account-multiple-outline',
                         title: `Data Availability`,
-                        img: `imgs/knowledge-7.jpeg`,
+                        img: `imgs/data-availability-3.jpg`,
                         id: 1,
                         subtitle: `Our comprehensive knowledge hub covers topic ranging from industry best practices.`,
                         staff: '   through robust measure.'
@@ -300,7 +192,7 @@
                     {
                         icon: 'storage',
                         title: `Knowledge Hub`,
-                        img: `imgs/data-availability-3.jpg`,
+                        img: `imgs/knowledge-7.jpeg`,
                         id: 3,
                         subtitle: `Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet`
                     }
