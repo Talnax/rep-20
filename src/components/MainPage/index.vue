@@ -13,32 +13,16 @@
                         class="white--text align-end"
                         height="240px"
                         :src="getImgUrl(n.img)" >
-                        <!--<v-row class="fill-height">-->
-                            <!--
-                            <v-card-title>
-                                <v-btn dark icon>
-                                    <v-icon>{{n.icon}}</v-icon>
-                                </v-btn>
-                                <v-spacer></v-spacer>
-                                <v-btn dark icon class="mr-4">
-                                    <v-icon>edit</v-icon>
-                                </v-btn>
-                                <v-btn dark icon>
-                                    <v-icon>more_vert</v-icon>
-                                </v-btn>
-                            </v-card-title>
-                            -->
-                            <!--<v-spacer></v-spacer>-->
-
+                        <!---->
                             <v-card-title class="white--text pl-12 pt-12">
-                                <v-icon color="white" style="margin-left: 15px; ">{{n.icon}}</v-icon>
-                                <div class="display-1 " style="margin-left: 15px;">{{n.title}}</div>
-                                <!--<v-icon>{{n.icon}}</v-icon>-->
-                                <!--<v-btn dark icon style="margin-top: 51px; margin-left: 18px;">-->
-                                    <!--<v-icon>{{n.icon}}</v-icon>-->
-                                <!--</v-btn>-->
+                                <v-btn dark icon class="bttn-top">
+                                    <v-icon color="white" >slideshow</v-icon>
+                                </v-btn>
+                                <v-icon color="white" class="icon-style">{{n.icon}}</v-icon>
+                                <div class="display-1 icon-title">{{n.title}}</div>
+                                <!--<div class="title font-weight-regular ">{{n.subtitle}}</div>-->
                             </v-card-title>
-                        <!--</v-row>-->
+
                     </v-img>
                     <!--
                     <v-card-title class="card-title">
@@ -158,20 +142,29 @@
             </v-col>
         </v-row>
 
+        <!--<hr class="divider">-->
+
+        <communication-more-dialog
+            v-if="show_more_dlg"
+            :show_dlg="show_more_dlg"
+            :item="show_more_item"
+            v-on:onCloseCommunicationMoreDialog="onCloseCommunicationMoreDialog">
+        </communication-more-dialog>
+
     </div>
     
 </template>
 
 <script>
     import loadImageMixin from "@/mixins/loadImageMixin";
-    //import CommunicationMoreDialog from "@/dialogs/communication-more-dialog"
+    import CommunicationMoreDialog from "@/dialogs/communication-more-dialog"
 
     export default {
         name: "MainPage-index",
         mixins: [loadImageMixin],
-        // components: {
-        //     "communication-more-dialog": CommunicationMoreDialog
-        // },
+        components: {
+            "communication-more-dialog": CommunicationMoreDialog
+        },
         data() {
             return {
                 show_more_dlg: false,
@@ -188,7 +181,7 @@
                     },
                     {
                         icon: 'event_available',
-                        title: `Events today`,
+                        title: `Events Today`,
                         img: `imgs/events-1.jpg`,
                         id: 2,
                         subtitle: `Check out our events scheduled over the next few months and sign up for seminars`
@@ -320,13 +313,10 @@
             }
         },
         methods: {
-            onListCommunicationClick(item) {
-                console.log('onListCommunicationClick(item): ', item );
-                this.onShowCommunicationMoreDialog(item);
-            },
 
             onClickCommunication(item) {
                 console.log("onShowCommunicationMoreDialog(item): ", item );
+                this.onShowCommunicationMoreDialog(item);
             },
 
             onShowCommunicationMoreDialog(item) {
@@ -350,13 +340,27 @@
         width: 100% !important;
         height: 100% !important;
         background-color: #F5F5F5;
-        margin-bottom: 30px;
+        //margin-bottom: 60px;
 
         .card-section {
 
             .card-position {
-                margin-top: 30px;
+                margin-top: 45px;
                 margin-left: 51px;
+
+                .bttn-top {
+                    position: absolute;
+                    top: 9px;
+                    right: 9px;
+                }
+
+                .icon-style {
+                    margin-left: 15px;
+                }
+
+                .icon-title {
+                    margin-left: 15px;
+                }
 
                 .app-bar-card {
                     height: 51px !important;
