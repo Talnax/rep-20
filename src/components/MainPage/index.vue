@@ -15,12 +15,12 @@
                         :src="getImgUrl(n.img)" >
                         <!---->
                             <v-card-title class="white--text pl-12 pt-12">
-                                <v-btn dark icon class="bttn-top">
+                                <v-btn dark icon class="btn-top">
                                     <v-icon color="white" >slideshow</v-icon>
                                 </v-btn>
                                 <v-icon color="white" class="icon-style">{{n.icon}}</v-icon>
                                 <div class="display-1 icon-title">{{n.title}}</div>
-                                <!--<div class="title font-weight-regular ">{{n.subtitle}}</div>-->
+                                <!----><div class="subtitle">{{n.subtitle}}</div>
                             </v-card-title>
 
                     </v-img>
@@ -343,12 +343,14 @@
         //margin-bottom: 60px;
 
         .card-section {
+            //text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.6);
+            //box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
 
             .card-position {
                 margin-top: 45px;
                 margin-left: 51px;
 
-                .bttn-top {
+                .btn-top {
                     position: absolute;
                     top: 9px;
                     right: 9px;
@@ -360,6 +362,13 @@
 
                 .icon-title {
                     margin-left: 15px;
+                }
+
+                .subtitle {
+                    font-weight: 400 !important;
+                    text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.6);
+                    color: white;
+                    line-height: normal;
                 }
 
                 .app-bar-card {
