@@ -11,9 +11,36 @@
                     width="390">
                     <v-img
                         class="white--text align-end"
-                        height="150px"
+                        height="240px"
                         :src="getImgUrl(n.img)" >
+                        <!--<v-row class="fill-height">-->
+                            <!--
+                            <v-card-title>
+                                <v-btn dark icon>
+                                    <v-icon>{{n.icon}}</v-icon>
+                                </v-btn>
+                                <v-spacer></v-spacer>
+                                <v-btn dark icon class="mr-4">
+                                    <v-icon>edit</v-icon>
+                                </v-btn>
+                                <v-btn dark icon>
+                                    <v-icon>more_vert</v-icon>
+                                </v-btn>
+                            </v-card-title>
+                            -->
+                            <!--<v-spacer></v-spacer>-->
+
+                            <v-card-title class="white--text pl-12 pt-12">
+                                <v-icon color="white" style="margin-left: 15px; ">{{n.icon}}</v-icon>
+                                <div class="display-1 " style="margin-left: 15px;">{{n.title}}</div>
+                                <!--<v-icon>{{n.icon}}</v-icon>-->
+                                <!--<v-btn dark icon style="margin-top: 51px; margin-left: 18px;">-->
+                                    <!--<v-icon>{{n.icon}}</v-icon>-->
+                                <!--</v-btn>-->
+                            </v-card-title>
+                        <!--</v-row>-->
                     </v-img>
+                    <!--
                     <v-card-title class="card-title">
                         <v-icon class="icon-position" >{{n.icon}}</v-icon>
                         <div class="display-1 mb-2">{{n.title}}</div>
@@ -21,24 +48,6 @@
                         <br><br>
                         <div class="title font-weight-regular ">{{n.subtitle}}</div>
                     </v-card-title>
-                    <!--
-                    <v-row
-                        class="fill-height"
-                        align="center"
-                        justify="center"
-                        v-text="n - 1">
-                    </v-row>
-                    -->
-                    <!--
-                        <v-row>
-                            <v-col class="hidden-sm-and-down" md="2">
-                                <v-icon size="33">mdi-account-multiple-outline</v-icon>
-                            </v-col>
-                            <v-col cols="12" md="10">
-                                Scaevola imperdiet nec ut,
-                                sed euismod convenire principes at.
-                            </v-col>
-                        </v-row>
                     -->
                 </v-card>
             </v-col>
@@ -175,11 +184,11 @@
                         img: `imgs/data-availability-3.jpg`,
                         id: 1,
                         subtitle: `Our comprehensive knowledge hub covers topic ranging from industry best practices.`,
-                        staff: '   through robust measure.'
+                        staff: ' through robust measure.'
                     },
                     {
                         icon: 'event_available',
-                        title: `Events`,
+                        title: `Events today`,
                         img: `imgs/events-1.jpg`,
                         id: 2,
                         subtitle: `Check out our events scheduled over the next few months and sign up for seminars`
