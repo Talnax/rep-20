@@ -13,14 +13,9 @@
                         class="white--text align-end"
                         height="150px"
                         :src="getImgUrl(n.img)" >
-                        <!--
-                        <v-card-title>
-                            <div v-html='n.title'/>
-                        </v-card-title>
-                        -->
                     </v-img>
                     <v-card-title class="card-title">
-                        <v-icon class="icon-position" size="27">{{n.icon}}</v-icon>
+                        <v-icon class="icon-position" >{{n.icon}}</v-icon>
                         <div class="display-1 mb-2">{{n.title}}</div>
                         <v-icon class="icon-right-position" size="27">slideshow</v-icon>
                         <br><br>
@@ -57,16 +52,16 @@
                 <v-card
                     class="card-position"
                     width="390">
-                    <v-app-bar dark color="grey" class="app-bar-card black--text">
-                        <v-toolbar-title class="app-bar-card-title">{{n.title}}</v-toolbar-title>
+                    <v-app-bar dark color="grey lighten-2" class="app-bar-card black--text">
+                    <!--<v-app-bar dark :class="n.color" class="app-bar-card black--text">-->
+                        <v-toolbar-title class="app-bar-card-title grey--text text--darken-3">{{n.title}}</v-toolbar-title><!---->
+                        <!--<v-toolbar-title class="app-bar-card-title">{{n.title}}</v-toolbar-title>-->
                         <v-spacer></v-spacer>
                         <v-btn icon class="app-bar-card-icon">
                             <v-icon >{{n.icon}}</v-icon>
                         </v-btn>
                     </v-app-bar>
                     <v-card-title class="card-title ">
-                        <!--<v-icon class="icon-position" size="36">{{n.icon}}</v-icon>-->
-                        <!--<div class="display-1 mb-2">{{n.title}}</div>-->
                         <div class="title font-weight-regular_second ">{{n.subtitle}}</div>
                     </v-card-title>
                     <!--
@@ -205,21 +200,24 @@
                         img: `imgs/knowledge-7.jpeg`,
                         id: 1,
                         subtitle: `Our comprehensive knowledge hub covers topic ranging from industry best practices.`,
-                        staff: '   through robust measure.'
+                        staff: '   through robust measure.',
+                        color: 'green'
                     },
                     {
                         icon: 'fiber_new',
                         title: `News`,
                         img: `imgs/events-1.jpg`,
                         id: 2,
-                        subtitle: `Check out our events scheduled over the next few months and sign up for seminars`
+                        subtitle: `Check out our events scheduled over the next few months and sign up for seminars`,
+                        color: 'orange',
                     },
                     {
                         icon: 'ring_volume',
                         title: `Communication`,
                         img: `imgs/data-availability-3.jpg`,
                         id: 3,
-                        subtitle: `Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet`
+                        subtitle: `Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet`,
+                        color: 'blue'
                     }
                 ],
 
@@ -351,19 +349,19 @@
                 margin-top: 30px;
                 margin-left: 51px;
 
+                .app-bar-card {
+                    height: 51px !important;
+
+                    .app-bar-card-title {
+                        margin-top: -9px !important;
+                    }
+                    .app-bar-card-icon {
+                        margin-top: -9px !important;
+                    }
+                }
+
                 .card-title {
                     margin-top: -9px;
-
-                    .app-bar-card {
-                        height: 51px !important;
-
-                        .app-bar-card-title {
-                            margin-top: -9px !important;
-                        }
-                        .app-bar-card-icon {
-                            margin-top: -9px !important;
-                        }
-                    }
 
                     .icon-position {
                         margin-right: 18px;
@@ -397,7 +395,6 @@
                         word-break: break-word;
                         margin-bottom: -15px;
                     }
-
                 }
             }
         }
