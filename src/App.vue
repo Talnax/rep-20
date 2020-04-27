@@ -72,6 +72,11 @@
           <router-view />
         </v-content>
 
+        <app-settings-dialog
+                :show_dlg="show_setting_dlg"
+                v-on:onCloseUserSettingsDialog="onCloseUserSettingsDialog">
+        </app-settings-dialog>
+
         <v-footer class="app-footer" color="white">
           <v-spacer></v-spacer>
           <div>RSi &copy; {{ new Date().getFullYear() }}</div>
@@ -81,14 +86,14 @@
 
 <script>
     import loadImageMixin from "@/mixins/loadImageMixin";
-    //import AppSettingsDialog from "@/dialogs/app-settings-dialog";
+    import AppSettingsDialog from "@/dialogs/app-settings-dialog";
 
 export default {
     name: 'App',
     mixins: [loadImageMixin],
-    // components: {
-    //     "app-settings-dialog": AppSettingsDialog
-    // },
+    components: {
+        "app-settings-dialog": AppSettingsDialog
+    },
     //data: () => ({}),
     data() {
         return {
@@ -196,6 +201,9 @@ export default {
     .avatar-tool-bar {
         text-align: center;
         margin-top: -9px;
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .combo-box-domain {

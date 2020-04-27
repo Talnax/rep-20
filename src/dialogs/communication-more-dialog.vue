@@ -3,12 +3,12 @@
         <div class="text-center">
 
             <v-dialog
-                    v-model="show_dlg"
-                    width="690">
+                v-model="show_dlg"
+                width="690">
 
                 <v-card>
 
-                    <v-card-title class="headline primary white--text title-card">
+                    <v-card-title class="headline grey white--text title-card">
                         <v-icon style="margin-right: 15px;">event_note</v-icon>
                         {{this.baseItem.title}}
                         <!--{{this.baseTitle}}-->
@@ -49,9 +49,9 @@
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn
-                                color="primary"
-                                text
-                                @click="onCloseDlg">
+                            color="black"
+                            text
+                            @click="onCloseDlg">
                             Close
                         </v-btn>
                     </v-card-actions>

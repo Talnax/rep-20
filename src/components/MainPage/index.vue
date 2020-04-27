@@ -174,7 +174,8 @@
                     {
                         icon:  'mdi-account-multiple-outline',
                         title: `Data Availability`,
-                        img: `imgs/data-availability-3.jpg`,
+                        //img: `imgs/data-availability-3.jpg`,
+                        img: 'imgs/data-availability-005.jpg',
                         id: 1,
                         subtitle: `Our comprehensive knowledge hub covers topic ranging from industry best practices.`,
                         staff: ' through robust measure.'
@@ -183,6 +184,7 @@
                         icon: 'event_available',
                         title: `Events Today`,
                         img: `imgs/events-1.jpg`,
+                        //img: `imgs/events-006.jpg`,
                         id: 2,
                         subtitle: `Check out our events scheduled over the next few months and sign up for seminars`
                     },
@@ -190,6 +192,7 @@
                         icon: 'storage',
                         title: `Knowledge Hub`,
                         img: `imgs/knowledge-7.jpeg`,
+                        //img: `imgs/knowledge-003.jpg`,
                         id: 3,
                         subtitle: `Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet`
                     }
@@ -352,16 +355,19 @@
 
                 .btn-top {
                     position: absolute;
-                    top: 9px;
+                    top: 18px;
                     right: 9px;
                 }
 
                 .icon-style {
-                    margin-left: 15px;
+                    position: absolute;
+                    left: 15px;
                 }
 
                 .icon-title {
-                    margin-left: 15px;
+                    position: absolute;
+                    top: 15px;
+                    left: 60px;
                 }
 
                 .subtitle {
@@ -369,6 +375,7 @@
                     text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.6);
                     color: white;
                     line-height: normal;
+                    margin-left: 9px;
                 }
 
                 .app-bar-card {
