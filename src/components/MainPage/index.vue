@@ -50,12 +50,12 @@
                         <!--color="grey lighten-2"-->
                         <!--<v-toolbar-title class="app-bar-card-title white--text">{{n.title}}</v-toolbar-title>-->
                         <!--<v-toolbar-title class="app-bar-card-title grey--text text--darken-3">{{n.title}}</v-toolbar-title>-->
-                        <v-toolbar-title class="app-bar-card-title black--text">{{n.title}}</v-toolbar-title><!---->
-                        <!--<v-toolbar-title :class="n.color_text" class="app-bar-card-title">{{n.title}}</v-toolbar-title>-->
+                        <!--<v-toolbar-title class="app-bar-card-title black--text">{{n.title}}</v-toolbar-title>-->
+                        <v-toolbar-title :class="n.color_text" class="app-bar-card-title">{{n.title}}</v-toolbar-title>
                         <v-spacer></v-spacer>
                         <v-btn icon class="app-bar-card-icon">
-                            <!--<v-icon class="black--text">{{n.icon}}</v-icon>-->
-                            <v-icon :color="n.color">{{n.icon}}</v-icon><!---->
+                            <v-icon class="black--text">{{n.icon}}</v-icon><!---->
+                            <!--<v-icon :color="n.color">{{n.icon}}</v-icon>-->
                         </v-btn>
                     </v-app-bar>
                     <hr class="divider-line">
@@ -94,16 +94,16 @@
                             </v-list-item-avatar>
                             -->
                             <v-list-item-icon>
-                                <!--<v-icon :color="n.color">{{ item.avatar }}</v-icon>-->
-                                <v-icon color="gray">{{ item.icon }}</v-icon>
+                                <v-icon :color="n.color">{{ item.icon }}</v-icon>
+                                <!--<v-icon color="gray">{{ item.icon }}</v-icon>-->
                             </v-list-item-icon>
                             <v-list-item-content>
                                 <v-list-item-title>{{ item.title }}</v-list-item-title>
                                 <v-list-item-subtitle>{{ item.date + ";  " + item.time }}</v-list-item-subtitle>
                             </v-list-item-content>
                             <v-list-item-icon>
-                                <!--<v-icon color="black">help_outline</v-icon>-->
-                                <v-icon :color="n.color">help_outline</v-icon>
+                                <v-icon color="grey">help_outline</v-icon>
+                                <!--<v-icon :color="n.color">help_outline</v-icon>-->
                             </v-list-item-icon>
                         </v-list-item>
                     </v-list>
@@ -114,8 +114,8 @@
                             v-for="item in news"
                             :key="item.id">
                             <v-list-item-icon>
-                                <!--<v-icon :color="n.color">{{ item.avatar }}</v-icon>-->
-                                <v-icon color="gray">{{ item.avatar }}</v-icon>
+                                <v-icon :color="n.color">{{ item.avatar }}</v-icon>
+                                <!--<v-icon color="gray">{{ item.avatar }}</v-icon>-->
                             </v-list-item-icon>
                             <v-list-item-content>
                                 <v-list-item-title>{{ item.title }}</v-list-item-title>
@@ -123,7 +123,8 @@
                             </v-list-item-content>
                             <v-list-item-icon>
                                 <!--<v-icon color="black">help_outline</v-icon>-->
-                                <v-icon :color="n.color">help_outline</v-icon>
+                                <!--<v-icon :color="n.color">help_outline</v-icon>-->
+                                <v-icon color="grey">help_outline</v-icon>
                             </v-list-item-icon>
                         </v-list-item>
                     </v-list>
@@ -134,16 +135,17 @@
                             v-for="item in daily_overview"
                             :key="item.id">
                             <v-list-item-icon>
-                                <!--<v-icon :color="n.color">{{ item.avatar }}</v-icon>-->
-                                <v-icon color="gray">{{ item.avatar }}</v-icon>
+                                <v-icon :color="n.color">{{ item.avatar }}</v-icon>
+                                <!--<v-icon color="grey">{{ item.avatar }}</v-icon>-->
                             </v-list-item-icon>
                             <v-list-item-content>
                                 <v-list-item-title>{{ item.title }}</v-list-item-title>
                                 <v-list-item-subtitle>{{ item.subtitle }}</v-list-item-subtitle>
                             </v-list-item-content>
                             <v-list-item-icon>
-                                <v-icon :color="n.color">help_outline</v-icon><!---->
+                                <!--<v-icon :color="n.color">help_outline</v-icon>-->
                                 <!--<v-icon color="black">help_outline</v-icon>-->
+                                <v-icon color="grey">help_outline</v-icon>
                             </v-list-item-icon>
                         </v-list-item>
                         <!--
@@ -287,7 +289,8 @@
                         date: '4/2/2020',
                         time: '9:15:07 AM',
                         avatar: 'icons/target.png',
-                        icon: 'store'
+                        icon: 'store',
+
                     },
                     {
                         title: 'Target Data Status',
