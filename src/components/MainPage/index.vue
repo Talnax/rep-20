@@ -45,15 +45,20 @@
                 <v-card
                     class="card-position"
                     width="390">
-                    <v-app-bar dark color="grey lighten-2" class="app-bar-card black--text">
+
                     <!--<v-app-bar dark :class="n.color" class="app-bar-card black--text">-->
-                        <v-toolbar-title class="app-bar-card-title grey--text text--darken-3">{{n.title}}</v-toolbar-title><!---->
-                        <!--<v-toolbar-title class="app-bar-card-title">{{n.title}}</v-toolbar-title>-->
+                    <v-app-bar dark color="white" class="app-bar-card black--text"><!--color="grey lighten-2"-->
+                        <!--<v-toolbar-title class="app-bar-card-title white--text">{{n.title}}</v-toolbar-title>-->
+                        <!--<v-toolbar-title class="app-bar-card-title grey--text text--darken-3">{{n.title}}</v-toolbar-title>-->
+                        <!--<v-toolbar-title class="app-bar-card-title black--text">{{n.title}}</v-toolbar-title>-->
+                        <v-toolbar-title :class="n.color_text" class="app-bar-card-title">{{n.title}}</v-toolbar-title>
                         <v-spacer></v-spacer>
                         <v-btn icon class="app-bar-card-icon">
-                            <v-icon >{{n.icon}}</v-icon>
+                            <!--<v-icon class="black--text">{{n.icon}}</v-icon>-->
+                            <v-icon :color="n.color">{{n.icon}}</v-icon><!---->
                         </v-btn>
                     </v-app-bar>
+                    <hr class="divider-line">
                     <v-card-title class="card-title ">
                         <div class="title font-weight-regular_second ">{{n.subtitle}}</div>
                     </v-card-title>
@@ -206,7 +211,8 @@
                         id: 1,
                         subtitle: `Our comprehensive knowledge hub covers topic ranging from industry best practices.`,
                         staff: '   through robust measure.',
-                        color: 'green'
+                        color: 'blue',
+                        color_text: 'blue--text'
                     },
                     {
                         icon: 'fiber_new',
@@ -215,6 +221,7 @@
                         id: 2,
                         subtitle: `Check out our events scheduled over the next few months and sign up for seminars`,
                         color: 'orange',
+                        color_text: 'orange--text'
                     },
                     {
                         icon: 'ring_volume',
@@ -222,7 +229,8 @@
                         img: `imgs/data-availability-3.jpg`,
                         id: 3,
                         subtitle: `Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet`,
-                        color: 'blue'
+                        color: 'teal',
+                        color_text: 'teal--text'
                     }
                 ],
 
@@ -387,6 +395,11 @@
                     .app-bar-card-icon {
                         margin-top: -9px !important;
                     }
+                }
+
+                .divider-line {
+                    border-top: 1px solid #EEEEEE;
+                    width: 100%;
                 }
 
                 .card-title {
