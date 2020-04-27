@@ -45,13 +45,13 @@
                 <v-card
                     class="card-position"
                     width="390">
-
                     <!--<v-app-bar dark :class="n.color" class="app-bar-card black--text">-->
-                    <v-app-bar dark color="white" class="app-bar-card black--text"><!--color="grey lighten-2"-->
+                    <v-app-bar dark color="white" class="app-bar-card black--text">
+                        <!--color="grey lighten-2"-->
                         <!--<v-toolbar-title class="app-bar-card-title white--text">{{n.title}}</v-toolbar-title>-->
                         <!--<v-toolbar-title class="app-bar-card-title grey--text text--darken-3">{{n.title}}</v-toolbar-title>-->
-                        <!--<v-toolbar-title class="app-bar-card-title black--text">{{n.title}}</v-toolbar-title>-->
-                        <v-toolbar-title :class="n.color_text" class="app-bar-card-title">{{n.title}}</v-toolbar-title>
+                        <v-toolbar-title class="app-bar-card-title black--text">{{n.title}}</v-toolbar-title><!---->
+                        <!--<v-toolbar-title :class="n.color_text" class="app-bar-card-title">{{n.title}}</v-toolbar-title>-->
                         <v-spacer></v-spacer>
                         <v-btn icon class="app-bar-card-icon">
                             <!--<v-icon class="black--text">{{n.icon}}</v-icon>-->
@@ -86,19 +86,24 @@
                             @click="onClickCommunication(item)"
                             v-for="item in communication"
                             :key="item.id">
+                            <!--
                             <v-list-item-avatar>
                                 <img v-if="item.avatar.includes('icons')"
                                      :src="getImgUrl(item.avatar)">
                                 <img v-else :src='item.avatar' >
                             </v-list-item-avatar>
-
+                            -->
+                            <v-list-item-icon>
+                                <!--<v-icon :color="n.color">{{ item.avatar }}</v-icon>-->
+                                <v-icon color="gray">{{ item.icon }}</v-icon>
+                            </v-list-item-icon>
                             <v-list-item-content>
                                 <v-list-item-title>{{ item.title }}</v-list-item-title>
                                 <v-list-item-subtitle>{{ item.date + ";  " + item.time }}</v-list-item-subtitle>
                             </v-list-item-content>
-
                             <v-list-item-icon>
-                                <v-icon>help_outline</v-icon>
+                                <!--<v-icon color="black">help_outline</v-icon>-->
+                                <v-icon :color="n.color">help_outline</v-icon>
                             </v-list-item-icon>
                         </v-list-item>
                     </v-list>
@@ -109,15 +114,16 @@
                             v-for="item in news"
                             :key="item.id">
                             <v-list-item-icon>
-                                <v-icon color="black">{{ item.avatar }}</v-icon>
+                                <!--<v-icon :color="n.color">{{ item.avatar }}</v-icon>-->
+                                <v-icon color="gray">{{ item.avatar }}</v-icon>
                             </v-list-item-icon>
                             <v-list-item-content>
                                 <v-list-item-title>{{ item.title }}</v-list-item-title>
                                 <v-list-item-subtitle>{{ item.subtitle }}</v-list-item-subtitle>
                             </v-list-item-content>
-
                             <v-list-item-icon>
-                                <v-icon>help_outline</v-icon>
+                                <!--<v-icon color="black">help_outline</v-icon>-->
+                                <v-icon :color="n.color">help_outline</v-icon>
                             </v-list-item-icon>
                         </v-list-item>
                     </v-list>
@@ -128,14 +134,16 @@
                             v-for="item in daily_overview"
                             :key="item.id">
                             <v-list-item-icon>
-                                <v-icon color="black">{{ item.avatar }}</v-icon>
+                                <!--<v-icon :color="n.color">{{ item.avatar }}</v-icon>-->
+                                <v-icon color="gray">{{ item.avatar }}</v-icon>
                             </v-list-item-icon>
                             <v-list-item-content>
                                 <v-list-item-title>{{ item.title }}</v-list-item-title>
                                 <v-list-item-subtitle>{{ item.subtitle }}</v-list-item-subtitle>
                             </v-list-item-content>
                             <v-list-item-icon>
-                                <v-icon>help_outline</v-icon>
+                                <v-icon :color="n.color">help_outline</v-icon><!---->
+                                <!--<v-icon color="black">help_outline</v-icon>-->
                             </v-list-item-icon>
                         </v-list-item>
                         <!--
@@ -278,7 +286,8 @@
                         value: '',
                         date: '4/2/2020',
                         time: '9:15:07 AM',
-                        avatar: 'icons/target.png'
+                        avatar: 'icons/target.png',
+                        icon: 'store'
                     },
                     {
                         title: 'Target Data Status',
@@ -286,7 +295,8 @@
                         value: '',
                         date: '4/2/2020',
                         time: '6:15:15 AM',
-                        avatar: 'icons/target.png'
+                        avatar: 'icons/target.png',
+                        icon: 'store'
                     },
                     {
                         title: 'Calimax Data Status',
@@ -294,7 +304,8 @@
                         value: '',
                         date: '4/2/2020',
                         time: '4:05:15 AM',
-                        avatar: 'icons/calimax.jpg'
+                        avatar: 'icons/calimax.jpg',
+                        icon: 'store'
                     },
                     {
                         title: 'Sams CN SSC Data Status',
@@ -303,6 +314,7 @@
                         date: '4/2/2020',
                         time: '3:40:15 AM',
                         avatar: 'icons/sams.png',
+                        icon: 'store'
                     },
                     {
                         title: 'Wallmart Category CN SSC Data Status -Resolved-',
@@ -310,7 +322,8 @@
                         value: '',
                         date: '4/2/2020',
                         time: '3:10:15 AM',
-                        avatar: 'icons/walmart.png'
+                        avatar: 'icons/walmart.png',
+                        icon: 'store'
                     },
                     {
                         title: 'Wallmart US Data Status -Resolved-',
@@ -318,7 +331,8 @@
                         value: '',
                         date: '4/2/2020',
                         time: '2:25:16 AM',
-                        avatar: 'icons/walmart.png'
+                        avatar: 'icons/walmart.png',
+                        icon: 'store'
                     }
                 ]
             }
