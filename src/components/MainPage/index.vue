@@ -159,6 +159,8 @@
 
         <!--<hr class="divider">-->
 
+        <br><br>
+
         <communication-more-dialog
             v-if="show_more_dlg"
             :show_dlg="show_more_dlg"
@@ -192,8 +194,7 @@
                         //img: `imgs/data-availability-3.jpg`,
                         img: 'imgs/data-availability-005.jpg',
                         id: 1,
-                        subtitle: `Our comprehensive knowledge hub covers topic ranging from industry best practices.`,
-                        staff: ' through robust measure.'
+                        subtitle: `Our comprehensive knowledge hub covers topic ranging from industry best practices.`
                     },
                     {
                         icon: 'event_available',
@@ -220,7 +221,6 @@
                         img: `imgs/knowledge-7.jpeg`,
                         id: 1,
                         subtitle: `Our comprehensive knowledge hub covers topic ranging from industry best practices.`,
-                        staff: '   through robust measure.',
                         color: 'blue',
                         color_text: 'blue--text'
                     },

@@ -8,7 +8,7 @@
 
                 <v-card>
 
-                    <v-card-title class="headline grey white--text title-card">
+                    <v-card-title class="headline teal white--text title-card">
                         <v-icon style="margin-right: 15px;">event_note</v-icon>
                         {{this.baseItem.title}}
                         <!--{{this.baseTitle}}-->
