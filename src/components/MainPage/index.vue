@@ -54,11 +54,11 @@
                         <v-toolbar-title :class="n.color_text" class="app-bar-card-title">{{n.title}}</v-toolbar-title>
                         <v-spacer></v-spacer>
                         <v-btn icon class="app-bar-card-icon">
-                            <v-icon class="black--text">{{n.icon}}</v-icon><!---->
+                            <v-icon class="grey--text">{{n.icon}}</v-icon><!---->
                             <!--<v-icon :color="n.color">{{n.icon}}</v-icon>-->
                         </v-btn>
                     </v-app-bar>
-                    <hr class="divider-line">
+                    <!--<hr class="divider-line">-->
                     <v-card-title class="card-title ">
                         <div class="title font-weight-regular_second ">{{n.subtitle}}</div>
                     </v-card-title>
@@ -94,7 +94,7 @@
                             </v-list-item-avatar>
                             -->
                             <v-list-item-icon>
-                                <v-icon :color="n.color">{{ item.icon }}</v-icon>
+                                <v-icon :color="n.color">{{ item.icon }}</v-icon><!---->
                                 <!--<v-icon color="gray">{{ item.icon }}</v-icon>-->
                             </v-list-item-icon>
                             <v-list-item-content>

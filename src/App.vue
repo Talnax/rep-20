@@ -36,8 +36,7 @@
           color="white"
           :mini-variant="mini"
           :right="right"
-          absolute
-          >
+          absolute>
           <v-list  class="py-0" >
               <img
                   class="rsi-logo"
@@ -52,15 +51,16 @@
                   <v-icon class="icons-projects black--text" >{{ item.icon }}</v-icon>
                   <span class="icon-text" :style="item.marginLeft">{{ item.short }}</span>
               </v-list-item>
-              <br><br><br><br><br><br><br><br><br><br><br>
-              <v-divider></v-divider>
+
+              <!--<v-divider class="bottom-divider"></v-divider>-->
+              <!--<v-spacer></v-spacer>-->
+              <v-divider class="bottom-divider"></v-divider>
 
               <v-list-item
-                      class="vertical-menu"
+                      class="vertical-menu-bottom"
                       v-for="item in bottom_items"
                       :key="item.title"
                       @click="onItemClick(item)">
-                  <!-- -->
                   <v-icon class="icons-projects black--text" >{{ item.icon }}</v-icon>
                   <span class="icon-text" :style="item.marginLeft">{{ item.short }}</span>
               </v-list-item>
@@ -180,6 +180,33 @@ export default {
             margin-top: 3px;
             margin-left: -2px;
             min-height: 51px;
+
+            .icons-projects {}
+
+            .icon-text {
+                font-size: 11px;
+                position: absolute !important;
+                white-space: nowrap;
+                display: initial;
+                margin-top: 21px;
+                overflow: visible !important;
+                clip: unset !important;
+                height: unset !important;
+
+                //color: black !important;
+            }
+        }
+
+        .bottom-divider {
+            //margin-top: 240px;
+            margin-top: 24px;
+        }
+
+        .vertical-menu-bottom {
+            position: fixed !important;
+            bottom: 18px;
+            margin-left: -2px;
+            //min-height: 51px;
 
             .icons-projects {}
 
