@@ -1,6 +1,31 @@
 <template>
     <div  class="main-control">
 
+        <v-carousel
+            class="carousel-style"
+            cycle
+            height="400"
+            hide-delimiter-background
+            show-arrows-on-hover>
+            <v-carousel-item
+                v-for="(slide, i) in slides"
+                :key="i"
+            >
+                <v-sheet
+                    :color="colors[i]"
+                    height="100%"
+                >
+                    <v-row
+                            class="fill-height"
+                            align="center"
+                            justify="center">
+                        <div class="display-3">{{ slide }} Slide</div>
+                    </v-row>
+                </v-sheet>
+            </v-carousel-item>
+        </v-carousel>
+        <br><br><br>
+
         <v-row class="card-section" justify="center">
             <v-col
                 v-for="n in cards"
@@ -187,6 +212,17 @@
                 show_more_dlg: false,
                 show_more_item: null,
 
+                colors: [
+                    'blue',
+                    'orange',
+                    'teal'
+                ],
+                slides: [
+                    'First',
+                    'Second',
+                    'Third'
+                ],
+
                 cards: [
                     {
                         icon:  'mdi-account-multiple-outline',
@@ -369,6 +405,13 @@
         height: 100% !important;
         background-color: #F5F5F5;
         //margin-bottom: 60px;
+
+        .carousel-style {
+            width: 72%;
+            margin: auto ;
+            left: 30px;
+            top: 60px;
+        }
 
         .card-section {
             //text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.6);

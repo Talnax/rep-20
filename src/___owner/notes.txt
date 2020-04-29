@@ -1,0 +1,9 @@
+1. https://www.sketch.com/s/0reQj/a/d45xMl
+
+
+2. Deploy to Firebase Hosting
+    2.0. npm install -g firebase-tools
+    2.1. npm run build
+    2.2. firebase login
+    2.3. firebase init
+    2.4. firebase deploy
