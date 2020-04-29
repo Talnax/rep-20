@@ -242,7 +242,7 @@
                         subtitle: `Check out our events scheduled over the next few months and sign up for seminars`
                     },
                     {
-                        icon: 'storage',
+                        icon: 'date_range', //'storage',
                         title: `Knowledge Hub`,
                         img: `imgs/knowledge-7.jpeg`,
                         //img: `imgs/knowledge-003.jpg`,
@@ -410,7 +410,7 @@
         .carousel-style {
             width: 72%;
             margin: auto ;
-            left: 30px;
+            left: 24px;
             top: 60px;
         }
 
