@@ -1,24 +1,25 @@
 <template>
     <div  class="main-control">
 
+        <!---->
         <v-carousel
             class="carousel-style"
-            cycle
+            :show-arrows="false"
             height="400"
+            cycle
             hide-delimiter-background
+            delimiter-icon="brightness_1"
             show-arrows-on-hover>
             <v-carousel-item
                 v-for="(slide, i) in slides"
-                :key="i"
-            >
+                :key="i">
                 <v-sheet
                     :color="colors[i]"
-                    height="100%"
-                >
+                    height="100%">
                     <v-row
-                            class="fill-height"
-                            align="center"
-                            justify="center">
+                        class="fill-height"
+                        align="center"
+                        justify="center">
                         <div class="display-3">{{ slide }} Slide</div>
                     </v-row>
                 </v-sheet>
@@ -225,7 +226,7 @@
 
                 cards: [
                     {
-                        icon:  'mdi-account-multiple-outline',
+                        icon:  'event_note',
                         title: `Data Availability`,
                         //img: `imgs/data-availability-3.jpg`,
                         img: 'imgs/data-availability-005.jpg',
@@ -234,7 +235,7 @@
                     },
                     {
                         icon: 'event_available',
-                        title: `Events Today`,
+                        title: `Events`,
                         img: `imgs/events-1.jpg`,
                         //img: `imgs/events-006.jpg`,
                         id: 2,

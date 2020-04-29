@@ -30,7 +30,7 @@
             -->
 
         <v-avatar
-            style="margin-right: 15px;"
+            style="margin-right: 24px;"
             @click="onShowcaseDialog"
             size="36"
             class="avatar-tool-bar app-settings" >
