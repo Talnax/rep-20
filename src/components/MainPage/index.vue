@@ -183,9 +183,9 @@
             </v-col>
         </v-row>
 
-        <!--<hr class="divider">-->
+        <br><br><br>
 
-        <br><br>
+        <!--<hr class="divider">-->
 
         <communication-more-dialog
             v-if="show_more_dlg"
@@ -408,7 +408,7 @@
         //margin-bottom: 60px;
 
         .carousel-style {
-            width: 72%;
+            width: 74%;
             margin: auto ;
             left: 24px;
             top: 60px;
