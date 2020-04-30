@@ -72,14 +72,8 @@
         },
         computed: {
             baseItem() {
-                //let base =
                 return this.isObject(this.item ) !== null ? this.item : null;
-                //return base;
-            },
-            // baseTitle() {
-            //     //var index = this.baseItem.title.search("Data Status");
-            //     return this.baseItem.title;
-            // }
+            }
         },
         methods: {
             isObject(o) {

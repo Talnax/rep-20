@@ -99,7 +99,8 @@
         </app-settings-dialog>
 
         <app-showcase-dialog
-            :show_dlg="show_setting_dlg"
+            :show_dlg="show_showcase_dlg"
+            :values_dlg="values_showcase_dlg"
             v-on:onCloseShowcaseDialog="onCloseShowcaseDialog">
         </app-showcase-dialog>
 
@@ -129,6 +130,8 @@ export default {
             search_msg: "",
             show_setting_dlg: false,
             show_showcase_dlg: false,
+            values_showcase_dlg: null,
+
             select_domain: "Americas",
             domains: [
                 "Americas", "EU", "CN", "WM", "WM EU", "WM CN"
@@ -181,12 +184,21 @@ export default {
         },
         onShowcaseDialog() {
             console.log('onShowcaseDialog()');
+            this.values_showcase_dlg = {
+                heading: 'Showcase',
+                when: 'Upcoming Webinar: Retail Shelf Alerting 5/5/2022',
+                explanation_1: 'An introduction webinar to review the use cases around Retail Shelf Alerting',
+                explanation_2: 'and its effectiveness for suppliers and retailers across the industry.',
+                img: '...'
+            };
             this.show_showcase_dlg = true;
         },
         onCloseShowcaseDialog() {
             console.log("onCloseShowcaseDialog()");
+            this.values_showcase_dlg = null;
             this.show_showcase_dlg = false;
         },
+
         onShowUserSettingsDialog() {
             console.clear();
             console.log("onShowUserSettingsDialog()");
@@ -196,6 +208,8 @@ export default {
             console.log("onCloseUserSettingsDialog()");
             this.show_setting_dlg = false;
         },
+
+
         onChangeSearch() {
             console.log("onChangeSearch(search): ", this.search_msg);
         }
