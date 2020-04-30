@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import MainPage from '../components/MainPage'
+import MainPage from '../components/MainPage/1_index'
 
 Vue.use(VueRouter)
 

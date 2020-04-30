@@ -21,21 +21,24 @@
               :items="domains">
           </v-combobox>
 
-            <!--
-            <v-icon
-                style="margin-right: 9px;"
-                class="icons-projects orange--text">
-                not_listed_location
-            </v-icon>
-            -->
-
-        <v-avatar
+        <!--
+        router
+        to="/applications-section"
+        -->
+        <v-btn
+            icon
             style="margin-right: 24px;"
             @click="onShowcaseDialog"
-            size="36"
-            class="avatar-tool-bar app-settings" >
-            <v-icon class="icons-projects orange--text" >not_listed_location</v-icon>
-        </v-avatar>
+            class="tool-bar-action-btn">
+            <v-icon color="blue-grey darken-1">
+                error_outline
+            </v-icon>
+        </v-btn>
+        <!--
+        <v-btn icon color="blue-grey darken-1">
+            <v-icon>apps</v-icon>
+        </v-btn>
+        -->
 
         <v-avatar
           @click="onShowUserSettingsDialog"
@@ -258,6 +261,15 @@ export default {
             }
         }
     }
+
+    .tool-bar-action-btn.v-btn--active {
+        .v-btn__content {
+            .v-icon {
+                color: #ff9800 !important;
+            }
+        }
+    }
+
 
     .avatar-tool-bar {
         text-align: center;

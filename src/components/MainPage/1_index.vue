@@ -4,49 +4,49 @@
         <v-carousel
             class="carousel-style"
             :show-arrows="false"
-            height="400"
+            height="360"
             cycle
             hide-delimiter-background
             delimiter-icon="brightness_1"
             show-arrows-on-hover>
             <v-carousel-item
-                    v-for="(slide, i) in slides"
-                    :key="i">
+                v-for="(slide, i) in slides"
+                :key="i">
                 <v-sheet
-                        :color="colors[i]"
-                        height="100%">
+                    :color="colors[i]"
+                    height="100%">
                     <v-row
-                            class="fill-height"
-                            align="center"
-                            justify="center">
+                        class="fill-height"
+                        align="center"
+                        justify="center">
                         <div class="display-3">{{ slide }} Slide</div>
                     </v-row>
                 </v-sheet>
             </v-carousel-item>
         </v-carousel>
-        <br><br><br>
+        <br><br>
 
         <v-row class="card-section" justify="center">
             <v-col
-                    v-for="n in cards"
-                    :key="n.id"
-                    cols="auto">
+                v-for="n in cards"
+                :key="n.id"
+                cols="auto">
                 <v-card
-                        class="card-position"
-                        width="390">
+                    class="card-position"
+                    width="390">
                     <v-img
-                            class="white--text align-end"
-                            height="240px"
-                            :src="getImgUrl(n.img)" >
+                        class="white--text align-end"
+                        height="240px"
+                        :src="getImgUrl(n.img)" >
                         <!---->
-                        <v-card-title class="white--text pl-12 pt-12">
-                            <v-btn dark icon class="btn-top">
-                                <v-icon color="white" >slideshow</v-icon>
-                            </v-btn>
-                            <v-icon color="white" class="icon-style">{{n.icon}}</v-icon>
-                            <div class="display-1 icon-title">{{n.title}}</div>
-                            <!----><div class="subtitle">{{n.subtitle}}</div>
-                        </v-card-title>
+                            <v-card-title class="white--text pl-12 pt-12">
+                                <v-btn dark icon class="btn-top">
+                                    <v-icon color="white" >slideshow</v-icon>
+                                </v-btn>
+                                <v-icon color="white" class="icon-style">{{n.icon}}</v-icon>
+                                <div class="display-1 icon-title">{{n.title}}</div>
+                                <!----><div class="subtitle">{{n.subtitle}}</div>
+                            </v-card-title>
 
                     </v-img>
                     <!--
@@ -64,12 +64,12 @@
 
         <v-row class="card-section" justify="center">
             <v-col
-                    v-for="n in hubs"
-                    :key="n.id"
-                    cols="auto">
+                v-for="n in hubs"
+                :key="n.id"
+                cols="auto">
                 <v-card
-                        class="card-position"
-                        width="390">
+                    class="card-position"
+                    width="390">
                     <!--<v-app-bar dark :class="n.color" class="app-bar-card black--text">-->
                     <v-app-bar dark color="white" class="app-bar-card black--text">
                         <!--color="grey lighten-2"-->
@@ -108,9 +108,9 @@
                     -->
                     <v-list v-if="n.title === 'Communication'" two-line>
                         <v-list-item
-                                @click="onClickCommunication(item)"
-                                v-for="item in communication"
-                                :key="item.id">
+                            @click="onClickCommunication(item)"
+                            v-for="item in communication"
+                            :key="item.id">
                             <!--
                             <v-list-item-avatar>
                                 <img v-if="item.avatar.includes('icons')"
@@ -135,9 +135,9 @@
 
                     <v-list v-if="n.title === 'News'" two-line>
                         <v-list-item
-                                @click="onClickCommunication(item)"
-                                v-for="item in news"
-                                :key="item.id">
+                            @click="onClickCommunication(item)"
+                            v-for="item in news"
+                            :key="item.id">
                             <v-list-item-icon>
                                 <v-icon :color="n.color">{{ item.avatar }}</v-icon>
                                 <!--<v-icon color="gray">{{ item.avatar }}</v-icon>-->
@@ -156,9 +156,9 @@
 
                     <v-list v-if="n.title === 'Daily Overview'" two-line>
                         <v-list-item
-                                @click="onClickCommunication(item)"
-                                v-for="item in daily_overview"
-                                :key="item.id">
+                            @click="onClickCommunication(item)"
+                            v-for="item in daily_overview"
+                            :key="item.id">
                             <v-list-item-icon>
                                 <v-icon :color="n.color">{{ item.avatar }}</v-icon>
                                 <!--<v-icon color="grey">{{ item.avatar }}</v-icon>-->
@@ -187,14 +187,14 @@
         <!--<hr class="divider">-->
 
         <communication-more-dialog
-                v-if="show_more_dlg"
-                :show_dlg="show_more_dlg"
-                :item="show_more_item"
-                v-on:onCloseCommunicationMoreDialog="onCloseCommunicationMoreDialog">
+            v-if="show_more_dlg"
+            :show_dlg="show_more_dlg"
+            :item="show_more_item"
+            v-on:onCloseCommunicationMoreDialog="onCloseCommunicationMoreDialog">
         </communication-more-dialog>
 
     </div>
-
+    
 </template>
 
 <script>
@@ -410,7 +410,7 @@
             width: 74%;
             margin: auto ;
             left: 24px;
-            top: 60px;
+            top: 30px;
         }
 
         .card-section {
@@ -418,7 +418,7 @@
             //box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
 
             .card-position {
-                margin-top: 45px;
+                margin-top: 18px;
                 margin-left: 51px;
 
                 .btn-top {
