@@ -8,12 +8,19 @@
 
                     <v-card-title class="headline teal white--text title-card">
                         <v-icon style="margin-right: 15px;">event_note</v-icon>
-                        Title
-                        <!--{{this.baseValue.title}}-->
-                        <!--{{this.baseTitle}}-->
+
+                        {{this.baseValue.heading}}<!---->
+                        <!--{{this.baseValue.img}}-->
                     </v-card-title>
 
                     <v-card-text><br>
+                        <!--
+                            <v-img
+                                class="white--text align-end"
+                                height="240px"
+                                :src="getImgUrl(this.baseValue.img)"></v-img>
+                            -->
+                        <!--
                         Scheduled System Maintenance 4/14/2020,  9:50:17 AM <br><br>
 
                         <b>Tuesday, April 14, 2020 9:29:40 AM EST</b>
@@ -41,6 +48,7 @@
                         at <b>support@retailsolutions.com</b> <br><br>
 
                         We appreciate your patience during tis time.
+                        -->
                     </v-card-text>
 
                     <v-divider></v-divider>
@@ -63,8 +71,11 @@
 </template>
 
 <script>
+    import loadImageMixin from "@/mixins/loadImageMixin";
+
     export default {
         name: "app-showcase-dialog",
+        mixins: [loadImageMixin],
         props: ["show_dlg", "values_dlg"],
         data() {
             return {
@@ -73,7 +84,7 @@
         },
         computed: {
             baseValue() {
-                return this.isObject(this.values_dlg ) !== null ? this.item : null;
+                return this.isObject(this.values_dlg ) !== null ? this.values_dlg : null;
             }
         },
         methods: {
@@ -81,8 +92,8 @@
                 return o !== null && typeof o === 'object' && Array.isArray(o) === false;
             },
             onCloseDlg() {
-                console.log('this.values_dlg: ', this.values_dlg);
-                console.log('call onCloseShowcaseDialog');
+                //console.log('this.values_dlg: ', this.values_dlg);
+                //console.log('call onCloseShowcaseDialog');
                 this.$emit("onCloseShowcaseDialog");
             }
         }

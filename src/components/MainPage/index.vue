@@ -13,12 +13,12 @@
                     v-for="(slide, i) in slides"
                     :key="i">
                 <v-sheet
-                        :color="colors[i]"
-                        height="100%">
+                    :color="colors[i]"
+                    height="100%">
                     <v-row
-                            class="fill-height"
-                            align="center"
-                            justify="center">
+                        class="fill-height"
+                        align="center"
+                        justify="center">
                         <div class="display-3">{{ slide }} Slide</div>
                     </v-row>
                 </v-sheet>
@@ -28,16 +28,16 @@
 
         <v-row class="card-section" justify="center">
             <v-col
-                    v-for="n in cards"
-                    :key="n.id"
-                    cols="auto">
+                v-for="n in cards"
+                :key="n.id"
+                cols="auto">
                 <v-card
                         class="card-position"
                         width="390">
                     <v-img
-                            class="white--text align-end"
-                            height="240px"
-                            :src="getImgUrl(n.img)" >
+                        class="white--text align-end"
+                        height="240px"
+                        :src="getImgUrl(n.img)" >
                         <!---->
                         <v-card-title class="white--text pl-12 pt-12">
                             <v-btn dark icon class="btn-top">

@@ -99,6 +99,7 @@
         </app-settings-dialog>
 
         <app-showcase-dialog
+            v-if="show_showcase_dlg"
             :show_dlg="show_showcase_dlg"
             :values_dlg="values_showcase_dlg"
             v-on:onCloseShowcaseDialog="onCloseShowcaseDialog">
@@ -183,7 +184,7 @@ export default {
             console.log('onItemClick(item): ', item);
         },
         onShowcaseDialog() {
-            console.log('onShowcaseDialog()');
+            console.log('onShowcaseDialog(!!!)');
             this.values_showcase_dlg = {
                 heading: 'Showcase',
                 when: 'Upcoming Webinar: Retail Shelf Alerting 5/5/2022',
