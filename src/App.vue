@@ -190,7 +190,7 @@ export default {
                 when: 'Upcoming Webinar: Retail Shelf Alerting 5/5/2022',
                 explanation_1: 'An introduction webinar to review the use cases around Retail Shelf Alerting',
                 explanation_2: 'and its effectiveness for suppliers and retailers across the industry.',
-                img: 'screen_shots/rsi-aris.png'
+                img: 'showcase/rsi-aris.png'
             };
             this.show_showcase_dlg = true;
         },

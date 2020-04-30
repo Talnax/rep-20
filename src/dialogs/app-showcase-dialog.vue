@@ -18,8 +18,22 @@
                             <v-img
                                 class="white--text align-end"
                                 height="240px"
-                                :src="getImgUrl(this.baseValue.img)"></v-img>
+                                :src="getImgUrl(this.baseValue.img)">
+
+                            </v-img>
                             -->
+
+                        <v-img
+                                class="white--text align-end"
+                                height="240px"
+                                :src="getImgUrl('webinar/rsi-aris.png')">
+
+                        </v-img>
+
+                        <!--'bk/rsi-logo.jpg'-->
+
+
+
                         <!--
                         Scheduled System Maintenance 4/14/2020,  9:50:17 AM <br><br>
 
