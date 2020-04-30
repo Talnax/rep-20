@@ -9,7 +9,7 @@
                     <v-card-title class="headline teal white--text title-card">
                         <v-icon style="margin-right: 15px;">event_note</v-icon>
                         Title
-                        <!--{{this.baseItem.title}}-->
+                        <!--{{this.baseValue.title}}-->
                         <!--{{this.baseTitle}}-->
                     </v-card-title>
 
@@ -72,7 +72,7 @@
             }
         },
         computed: {
-            baseItem() {
+            baseValue() {
                 return this.isObject(this.values_dlg ) !== null ? this.item : null;
             }
         },
