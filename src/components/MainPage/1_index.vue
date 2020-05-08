@@ -9,6 +9,7 @@
             hide-delimiter-background
             delimiter-icon="brightness_1"
             show-arrows-on-hover>
+            <!--
             <v-carousel-item
                 v-for="(slide, i) in slides"
                 :key="i">
@@ -19,9 +20,18 @@
                         class="fill-height"
                         align="center"
                         justify="center">
-                        <div class="display-3">{{ slide }} Slide</div>
+                        <div class="display-3">{{ slide }}</div>
+                        <div class="center-position">{{ goto[i] }}</div>
                     </v-row>
                 </v-sheet>
+                -->
+
+                <v-carousel-item
+                    v-for="(item,i) in carousel_items"
+                    :key="i"
+                    :src="getImgUrl(item.img)"
+                ></v-carousel-item>
+                <!---->
             </v-carousel-item>
         </v-carousel>
         <br><br>
@@ -218,9 +228,21 @@
                     'teal'
                 ],
                 slides: [
-                    'First',
-                    'Second',
-                    'Third'
+                    'Case Study: Optimizing OSA with ISP',
+                    'Join US For Our Upcoming Webinar!',
+                    'The Future of E-commerce'
+                ],
+                goto: [
+                    `Tackle On-Shelf Availability issues and empower in-store teams with RSi's In Store Power Solution`,
+                    `Taking A Deeper Dive Into DVoid & Store Compliance EGDs 5/7/2020 at 11 AM EST`,
+                    `Covid-19 has had a major impact on the CPG industry as a whole, especially E-commerce.
+                    In out piece, we explore the future implication`
+                ],
+
+                carousel_items: [
+                    { img: 'bk/carousel-1.png' },
+                    { img: 'bk/carousel-2.png' },
+                    { img: 'bk/carousel-3.png' }
                 ],
 
                 cards: [
@@ -411,6 +433,11 @@
             margin: auto ;
             left: 24px;
             top: 30px;
+
+            .center-position {
+                width: 90%;
+                font-size: 33px;
+            }
         }
 
         .card-section {

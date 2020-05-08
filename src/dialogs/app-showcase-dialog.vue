@@ -28,7 +28,6 @@
                             :src="getImgUrl('bk/rsi-aris.png')">
                         </v-img>
 
-
                     </v-card-text>
 
                     <v-divider></v-divider>
@@ -58,9 +57,7 @@
         mixins: [loadImageMixin],
         props: ["show_dlg", "values_dlg"],
         data() {
-            return {
-
-            }
+            return {}
         },
         computed: {
             baseValue() {
@@ -72,8 +69,6 @@
                 return o !== null && typeof o === 'object' && Array.isArray(o) === false;
             },
             onCloseDlg() {
-                //console.log('this.values_dlg: ', this.values_dlg);
-                //console.log('call onCloseShowcaseDialog');
                 this.$emit("onCloseShowcaseDialog");
             }
         }
