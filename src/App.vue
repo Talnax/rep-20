@@ -30,8 +30,11 @@
             style="margin-right: 24px;"
             @click="onShowcaseDialog"
             class="tool-bar-action-btn">
-            <v-icon color="blue-grey darken-1">
-                error_outline
+            <!--<v-icon color="blue-grey darken-1">-->
+            <v-icon color="grey darken-4">
+                <!--error_outline-->
+                phonelink
+                <!--chrome_reader_mode-->
             </v-icon>
         </v-btn>
         <!--

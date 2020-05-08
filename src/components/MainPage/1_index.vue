@@ -24,15 +24,27 @@
                         <div class="center-position">{{ goto[i] }}</div>
                     </v-row>
                 </v-sheet>
-                -->
-
-                <v-carousel-item
-                    v-for="(item,i) in carousel_items"
-                    :key="i"
-                    :src="getImgUrl(item.img)"
-                ></v-carousel-item>
-                <!---->
             </v-carousel-item>
+            -->
+
+            <!---->
+            <v-carousel-item
+                v-for="(item,i) in carousel_items"
+                :key="i"
+                :src="getImgUrl(item.img)">
+                <v-sheet
+                    style="background-color: transparent !important;"
+                    height="100%">
+                    <v-row
+                            class="fill-height"
+                            align="center"
+                            justify="center">
+                        <div class="display-3">{{ slides[i] }}</div>
+                        <div class="center-position">{{ goto[i] }}</div>
+                    </v-row>
+                </v-sheet>
+            </v-carousel-item>
+
         </v-carousel>
         <br><br>
 
@@ -240,9 +252,9 @@
                 ],
 
                 carousel_items: [
-                    { img: 'bk/carousel-1.png' },
-                    { img: 'bk/carousel-2.png' },
-                    { img: 'bk/carousel-3.png' }
+                    { img: 'bk/carousel-4.jpg' },
+                    { img: 'bk/carousel-5.jpg' },
+                    { img: 'bk/carousel-6.jpg' }
                 ],
 
                 cards: [
