@@ -39,8 +39,11 @@
                             class="fill-height"
                             align="center"
                             justify="center">
-                        <div class="display-3">{{ slides[i] }}</div>
-                        <div class="center-position">{{ goto[i] }}</div>
+                        <div class="display-3">{{ item.title }}</div>
+                        <div class="center-position">{{ item.desc }}</div>
+                        <div class="btn-position">
+                            <v-btn x-large :color="item.btn.color" dark>{{ item.btn.txt }}</v-btn>
+                        </div>
                     </v-row>
                 </v-sheet>
             </v-carousel-item>
@@ -248,13 +251,38 @@
                     `Tackle On-Shelf Availability issues and empower in-store teams with RSi's In Store Power Solution`,
                     `Taking A Deeper Dive Into DVoid & Store Compliance EGDs 5/7/2020 at 11 AM EST`,
                     `Covid-19 has had a major impact on the CPG industry as a whole, especially E-commerce.
-                    In out piece, we explore the future implication`
+                     In out piece, we explore the future implication`
                 ],
 
                 carousel_items: [
-                    { img: 'bk/carousel-4.jpg' },
-                    { img: 'bk/carousel-5.jpg' },
-                    { img: 'bk/carousel-6.jpg' }
+                    {
+                        img: 'bk/carousel-4.jpg',
+                        title: 'Case Study: Optimizing OSA with ISP',
+                        desc: `Tackle On-Shelf Availability issues and empower in-store teams with RSi's In Store Power Solution`,
+                        btn: {
+                            txt: 'Learn More',
+                            color: 'green',
+                        }
+                    },
+                    {
+                        img: 'bk/carousel-5.jpg',
+                        title: 'Join US For Our Upcoming Webinar!',
+                        desc: `Taking A Deeper Dive Into DVoid & Store Compliance EGDs 5/7/2020 at 11 AM EST`,
+                        btn: {
+                            txt: 'Register Now',
+                            color: 'teal',
+                        }
+                    },
+                    {
+                        img: 'bk/carousel-6.jpg',
+                        title: 'The Future of E-commerce',
+                        desc: `Covid-19 has had a major impact on the CPG industry as a whole, especially E-commerce.
+                               In out piece, we explore the future implication`,
+                        btn: {
+                            txt: 'Read More',
+                            color: 'red',
+                        }
+                    }
                 ],
 
                 cards: [
@@ -448,7 +476,14 @@
 
             .center-position {
                 width: 90%;
-                font-size: 33px;
+                font-size: 27px;
+                text-align: center;
+                margin-top: -60px;
+            }
+
+            .btn-position {
+                text-align: center;
+                margin-top: -60px;
             }
         }
 
