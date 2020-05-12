@@ -9,25 +9,6 @@
             hide-delimiter-background
             delimiter-icon="brightness_1"
             show-arrows-on-hover>
-            <!--
-            <v-carousel-item
-                v-for="(slide, i) in slides"
-                :key="i">
-                <v-sheet
-                    :color="colors[i]"
-                    height="100%">
-                    <v-row
-                        class="fill-height"
-                        align="center"
-                        justify="center">
-                        <div class="display-3">{{ slide }}</div>
-                        <div class="center-position">{{ goto[i] }}</div>
-                    </v-row>
-                </v-sheet>
-            </v-carousel-item>
-            -->
-
-            <!---->
             <v-carousel-item
                 v-for="(item,i) in carousel_items"
                 :key="i"
@@ -72,15 +53,6 @@
                                 <div class="subtitle">{{n.subtitle}}</div>
                             </v-card-title>
                     </v-img>
-                    <!--
-                    <v-card-title class="card-title">
-                        <v-icon class="icon-position" >{{n.icon}}</v-icon>
-                        <div class="display-1 mb-2">{{n.title}}</div>
-                        <v-icon class="icon-right-position" size="27">slideshow</v-icon>
-                        <br><br>
-                        <div class="title font-weight-regular ">{{n.subtitle}}</div>
-                    </v-card-title>
-                    -->
                 </v-card>
             </v-col>
         </v-row>
@@ -95,14 +67,10 @@
                     width="390">
                     <!--<v-app-bar dark :class="n.color" class="app-bar-card black--text">-->
                     <v-app-bar dark color="white" class="app-bar-card black--text">
-                        <!--color="grey lighten-2"-->
-                        <!--<v-toolbar-title class="app-bar-card-title white--text">{{n.title}}</v-toolbar-title>-->
-                        <!--<v-toolbar-title class="app-bar-card-title grey--text text--darken-3">{{n.title}}</v-toolbar-title>-->
-                        <!--<v-toolbar-title class="app-bar-card-title black--text">{{n.title}}</v-toolbar-title>-->
                         <v-toolbar-title :class="n.color_text" class="app-bar-card-title">{{n.title}}</v-toolbar-title>
                         <v-spacer></v-spacer>
                         <v-btn icon class="app-bar-card-icon">
-                            <v-icon class="grey--text">{{n.icon}}</v-icon><!---->
+                            <v-icon class="grey--text">{{n.icon}}</v-icon>
                             <!--<v-icon :color="n.color">{{n.icon}}</v-icon>-->
                         </v-btn>
                     </v-app-bar>
@@ -110,40 +78,13 @@
                     <v-card-title class="card-title ">
                         <div class="title font-weight-regular_second ">{{n.subtitle}}</div>
                     </v-card-title>
-                    <!--
-                    <v-row
-                        class="fill-height"
-                        align="center"
-                        justify="center"
-                        v-text="n - 1">
-                    </v-row>
-                    -->
-                    <!--
-                        <v-row>
-                            <v-col class="hidden-sm-and-down" md="2">
-                                <v-icon size="33">mdi-account-multiple-outline</v-icon>
-                            </v-col>
-                            <v-col cols="12" md="10">
-                                Scaevola imperdiet nec ut,
-                                sed euismod convenire principes at.
-                            </v-col>
-                        </v-row>
-                    -->
                     <v-list v-if="n.title === 'Communication'" two-line>
                         <v-list-item
                             @click="onClickCommunication(item)"
                             v-for="item in communication"
                             :key="item.id">
-                            <!--
-                            <v-list-item-avatar>
-                                <img v-if="item.avatar.includes('icons')"
-                                     :src="getImgUrl(item.avatar)">
-                                <img v-else :src='item.avatar' >
-                            </v-list-item-avatar>
-                            -->
                             <v-list-item-icon>
                                 <v-icon :color="n.color">{{ item.icon }}</v-icon><!---->
-                                <!--<v-icon color="gray">{{ item.icon }}</v-icon>-->
                             </v-list-item-icon>
                             <v-list-item-content>
                                 <v-list-item-title>{{ item.title }}</v-list-item-title>
@@ -151,7 +92,6 @@
                             </v-list-item-content>
                             <v-list-item-icon>
                                 <v-icon color="grey">help_outline</v-icon>
-                                <!--<v-icon :color="n.color">help_outline</v-icon>-->
                             </v-list-item-icon>
                         </v-list-item>
                     </v-list>
@@ -235,25 +175,6 @@
                 show_more_dlg: false,
                 show_more_item: null,
 
-                /*
-                colors: [
-                    'blue',
-                    'orange',
-                    'teal'
-                ],
-                slides: [
-                    'Case Study: Optimizing OSA with ISP',
-                    'Join US For Our Upcoming Webinar!',
-                    'The Future of E-commerce'
-                ],
-                goto: [
-                    `Tackle On-Shelf Availability issues and empower in-store teams with RSi's In Store Power Solution`,
-                    `Taking A Deeper Dive Into DVoid & Store Compliance EGDs 5/7/2020 at 11 AM EST`,
-                    `Covid-19 has had a major impact on the CPG industry as a whole, especially E-commerce.
-                     In out piece, we explore the future implication`
-                ],
-                */
-
                 carousel_items: [
                     {
                         img: 'bk/carousel-4.jpg',
@@ -292,7 +213,6 @@
                     {
                         icon:  'event_note',
                         title: `Data Availability`,
-                        //img: `imgs/data-availability-3.jpg`,
                         img: 'imgs/data-availability-005.jpg',
                         id: 1,
                         subtitle: `Our comprehensive knowledge hub covers topic ranging from industry best practices.`
@@ -301,15 +221,13 @@
                         icon: 'event_available',
                         title: `Events`,
                         img: `imgs/events-1.jpg`,
-                        //img: `imgs/events-006.jpg`,
                         id: 2,
                         subtitle: `Check out our events scheduled over the next few months and sign up for seminars`
                     },
                     {
-                        icon: 'date_range', //'storage',
+                        icon: 'date_range',
                         title: `Knowledge Hub`,
                         img: `imgs/knowledge-7.jpeg`,
-                        //img: `imgs/knowledge-003.jpg`,
                         id: 3,
                         subtitle: `Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet`
                     }
@@ -319,7 +237,6 @@
                     {
                         icon:  'language',
                         title: `Daily Overview`,
-                        img: `imgs/knowledge-7.jpeg`,
                         id: 1,
                         subtitle: `Our comprehensive knowledge hub covers topic ranging from industry best practices.`,
                         color: 'blue',
@@ -328,7 +245,6 @@
                     {
                         icon: 'fiber_new',
                         title: `News`,
-                        img: `imgs/events-1.jpg`,
                         id: 2,
                         subtitle: `Check out our events scheduled over the next few months and sign up for seminars`,
                         color: 'orange',
@@ -337,7 +253,6 @@
                     {
                         icon: 'ring_volume',
                         title: `Communication`,
-                        img: `imgs/data-availability-3.jpg`,
                         id: 3,
                         subtitle: `Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet`,
                         color: 'teal',
@@ -429,15 +344,15 @@
                         avatar: 'icons/walmart.png',
                         icon: 'store'
                     },
-                    {
-                        title: 'Wallmart US Data Status -Resolved-',
-                        subtitle: 'More...',
-                        value: '',
-                        date: '4/2/2020',
-                        time: '2:25:16 AM',
-                        avatar: 'icons/walmart.png',
-                        icon: 'store'
-                    }
+                    // {
+                    //     title: 'Wallmart US Data Status -Resolved-',
+                    //     subtitle: 'More...',
+                    //     value: '',
+                    //     date: '4/2/2020',
+                    //     time: '2:25:16 AM',
+                    //     avatar: 'icons/walmart.png',
+                    //     icon: 'store'
+                    // }
                 ]
             }
         },
@@ -475,7 +390,7 @@
             width: 74%;
             margin: auto ;
             left: 24px;
-            top: 30px;
+            top: 36px;
 
             .center-position {
                 width: 90%;
