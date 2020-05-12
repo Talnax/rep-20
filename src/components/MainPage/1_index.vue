@@ -62,17 +62,15 @@
                     <v-img
                         class="white--text align-end"
                         height="240px"
-                        :src="getImgUrl(n.img)" >
-                        <!---->
+                        :src="getImgUrl(n.img)">
                             <v-card-title class="white--text pl-12 pt-12">
                                 <v-btn dark icon class="btn-top">
                                     <v-icon color="white" >slideshow</v-icon>
                                 </v-btn>
                                 <v-icon color="white" class="icon-style">{{n.icon}}</v-icon>
                                 <div class="display-1 icon-title">{{n.title}}</div>
-                                <!----><div class="subtitle">{{n.subtitle}}</div>
+                                <div class="subtitle">{{n.subtitle}}</div>
                             </v-card-title>
-
                     </v-img>
                     <!--
                     <v-card-title class="card-title">
@@ -237,6 +235,7 @@
                 show_more_dlg: false,
                 show_more_item: null,
 
+                /*
                 colors: [
                     'blue',
                     'orange',
@@ -253,6 +252,7 @@
                     `Covid-19 has had a major impact on the CPG industry as a whole, especially E-commerce.
                      In out piece, we explore the future implication`
                 ],
+                */
 
                 carousel_items: [
                     {
@@ -262,7 +262,8 @@
                         btn: {
                             txt: 'Learn More',
                             color: 'green',
-                        }
+                        },
+                        url: ""
                     },
                     {
                         img: 'bk/carousel-5.jpg',
@@ -271,7 +272,8 @@
                         btn: {
                             txt: 'Register Now',
                             color: 'teal',
-                        }
+                        },
+                        url: ""
                     },
                     {
                         img: 'bk/carousel-6.jpg',
@@ -281,7 +283,8 @@
                         btn: {
                             txt: 'Read More',
                             color: 'red',
-                        }
+                        },
+                        url: ""
                     }
                 ],
 
@@ -342,21 +345,6 @@
                     }
                 ],
 
-                news: [
-                    {
-                        title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-                        subtitle: 'Lorem Ipsum has been the industry',
-                        avatar: 'commute',
-                        id: 1
-                    },
-                    {
-                        title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-                        subtitle: 'Lorem Ipsum has been the industry',
-                        avatar: 'credit_card',
-                        id: 2
-                    }
-                ],
-
                 daily_overview: [
                     {
                         title: 'Lorem Ipsum is simply dummy text of the printing',
@@ -375,6 +363,21 @@
                         subtitle: 'Lorem Ipsum has been the industry standard dummy text',
                         avatar: 'graphic_eq',
                         id: 3
+                    }
+                ],
+
+                news: [
+                    {
+                        title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        subtitle: 'Lorem Ipsum has been the industry',
+                        avatar: 'commute',
+                        id: 1
+                    },
+                    {
+                        title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        subtitle: 'Lorem Ipsum has been the industry',
+                        avatar: 'credit_card',
+                        id: 2
                     }
                 ],
 
